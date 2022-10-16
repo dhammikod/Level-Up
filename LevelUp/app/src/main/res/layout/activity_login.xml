@@ -35,8 +35,8 @@
                 android:layout_marginEnd="8dp"
                 android:background="@android:color/holo_blue_light"
                 app:layout_constraintEnd_toStartOf="@+id/textView3"
-                app:layout_constraintStart_toStartOf="@+id/Signup"
-                app:layout_constraintTop_toBottomOf="@+id/Signup" />
+                app:layout_constraintStart_toStartOf="@+id/Login"
+                app:layout_constraintTop_toBottomOf="@+id/Login" />
 
             <View
                 android:id="@+id/garispembatas2"
@@ -45,9 +45,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:background="@android:color/holo_blue_light"
-                app:layout_constraintEnd_toEndOf="@+id/Signup"
+                app:layout_constraintEnd_toEndOf="@+id/Login"
                 app:layout_constraintStart_toEndOf="@+id/textView3"
-                app:layout_constraintTop_toBottomOf="@+id/Signup" />
+                app:layout_constraintTop_toBottomOf="@+id/Login" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/FormUser"
@@ -168,7 +168,7 @@
 
 
             <Button
-                android:id="@+id/Signup"
+                android:id="@+id/Login"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -186,7 +186,7 @@
                 app:strokeColor="@color/darkbluebg" />
 
             <Button
-                android:id="@+id/Login"
+                android:id="@+id/Signup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -214,9 +214,9 @@
                 android:layout_marginTop="4dp"
                 android:text="Or"
                 android:textColor="@color/lightbluebg"
-                app:layout_constraintEnd_toEndOf="@+id/Signup"
-                app:layout_constraintStart_toStartOf="@+id/Signup"
-                app:layout_constraintTop_toBottomOf="@+id/Signup" />
+                app:layout_constraintEnd_toEndOf="@+id/Login"
+                app:layout_constraintStart_toStartOf="@+id/Login"
+                app:layout_constraintTop_toBottomOf="@+id/Login" />
 
             <TextView
                 android:id="@+id/textView4"
