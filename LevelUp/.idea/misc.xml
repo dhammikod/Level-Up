@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/drawable/background_putih.xml" value="0.1" />
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/drawable/backgroundstrip.xml" value="0.1" />
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/drawable/bg.xml" value="0.1" />
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/drawable/bghome.xml" value="0.1" />
@@ -17,7 +18,7 @@
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/layout/activity_main.xml" value="0.2558139534883721" />
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/layout/activity_splash.xml" value="0.22" />
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/layout/fragment_findprojects.xml" value="0.15896739130434784" />
-        <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/layout/fragment_home.xml" value="0.15" />
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/layout/fragment_myprojects.xml" value="0.15896739130434784" />
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/layout/fragment_profile.xml" value="0.15896739130434784" />
         <entry key="..\:/lomba/lomba lo 2022/Level up/Level-Up/LevelUp/app/src/main/res/menu/bottomnavbar.xml" value="0.20416666666666666" />
