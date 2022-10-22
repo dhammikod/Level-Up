@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import com.a706012110039.levelup.databinding.ActivityProjectBinding
 import com.a706012110039.levelup.databinding.FragmentProjectOverviewBinding
 import kotlinx.android.synthetic.main.fragment_project_overview.*
@@ -27,39 +28,6 @@ class ProjectOverview : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        val roles=ArrayList<String>()
-        roles.add("Doctor")
-        roles.add("Programmer")
-
-        val projectss=ArrayList<Int>()
-        projectss.add(0)
-        projectss.add(1)
-
-        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss))
-
-
-        val replies=ArrayList<reply>()
-        replies.add(reply(0,"hellow"))
-        replies.add(reply(0,"hi"))
-
-
-        val discussions=ArrayList<model.discussion>()
-        discussions.add(discussion("Salary","How much is salary",0,replies))
-        discussions.add(discussion("Salary","How much is salary",0,replies))
-
-        val tasks=ArrayList<task>()
-        tasks.add(task("Start","Plan to start","9 December 2022",0,"Done"))
-        tasks.add(task("Start","Plan to start","9 December 2022",0,"Y"))
-
-        GlobalVar.projects.add(
-            projects(0,"Projek 1","","Ini adalah dummy project pertama","Mohon join yuk","9 Oktober 2022", roles, discussions ,tasks,
-                arrayListOf(),0)
-        )
-
-        GlobalVar.projects[0].enrolleduser.add(0)
-
-
         start()
 
 
@@ -69,7 +37,10 @@ class ProjectOverview : Fragment() {
     private fun start(){
         binding.projectcreatortv.text = GlobalVar.users[GlobalVar.projects[GlobalVar.projects.size-1].creator].name
         binding.projecttitletv.text= GlobalVar.projects[GlobalVar.projects.size-1].title
-
+        binding.projectnotestv.text= GlobalVar.projects[GlobalVar.projects.size-1].notes
+        binding.projectstarttv.text= GlobalVar.projects[GlobalVar.projects.size-1].startdate
+        binding.projectoverviewtv.text= GlobalVar.projects[GlobalVar.projects.size-1].overview
+//        binding.projectimage.setImageURI(GlobalVar.projects[GlobalVar.projects.size-1].logoproject.toUri())
     }
 
 }
