@@ -53,8 +53,11 @@ class ProjectActivity : AppCompatActivity() {
         projectss.add(0)
         projectss.add(1)
 
-        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss))
+        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss,""))
 
+        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss,""))
+
+        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss,""))
 
         val replies=ArrayList<reply>()
         replies.add(reply(0,"hellow"))

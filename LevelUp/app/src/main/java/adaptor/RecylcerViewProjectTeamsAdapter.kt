@@ -1,5 +1,6 @@
 package adaptor
 
+import Interface.CardListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,7 @@ import com.a706012110039.levelup.R
 import model.user
 
 
-class RecylcerViewProjectTeamsAdapter(private val dataSet: Array<user>) :
+class RecylcerViewProjectTeamsAdapter(private val dataSet: ArrayList<user>, val cardListener: CardListener) :
         RecyclerView.Adapter<RecylcerViewProjectTeamsAdapter.ViewHolder>() {
 
     /**
