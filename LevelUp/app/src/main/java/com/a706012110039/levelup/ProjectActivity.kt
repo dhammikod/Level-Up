@@ -17,7 +17,7 @@ class ProjectActivity : AppCompatActivity() {
         binding = ActivityProjectBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+    setcurfragment(ProjectOverview())
 
         dummydata()
 
