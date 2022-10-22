@@ -21,10 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.Login.setOnClickListener {
             finish()
-            Database.GlobalVar.users.add(user("Vincent","vincent@email.com","Premium",1,2,2,
-                arrayListOf(), arrayListOf(), arrayListOf()))
-
-
         }
     }
 }

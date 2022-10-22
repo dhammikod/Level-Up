@@ -1,5 +1,6 @@
 package com.a706012110039.levelup
 
+import Database.GlobalVar
 import adaptor.recyclerviewRecentsAdaptor
 import android.content.Intent
 import android.os.Bundle
@@ -35,19 +36,31 @@ class HomeFragment : Fragment() {
         var curuser: user
         var projects: projects
 
-        curuser = user("dham","email","free",0,0,0, arrayListOf("teacher", "bla1"), arrayListOf(),
+        var iduser = 0
+        if (GlobalVar.users.size > 0){
+            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+        }
+        curuser = user(iduser,"dham","email","free",0,0,0, arrayListOf("teacher", "bla1"), arrayListOf(),
             arrayListOf())
-        projects = projects("title","cilukba","lorem50","penting","oktober", arrayListOf(),
-            arrayListOf())
-        curuser.mycurprojects.add(projects)
 
+        var idproject = 0
+
+        for(i in 0..5){
+            if (GlobalVar.users.size > 0){
+                idproject = GlobalVar.users[GlobalVar.users.size-1].id + 1
+            }
+            GlobalVar.projects.add(projects(idproject,"title","cilukba","lorem50","penting","oktober", arrayListOf(),
+                arrayListOf(), arrayListOf(), arrayListOf()))
+        }
+        curuser.mycurprojects.add(0)
+        curuser.mycurprojects.add(1)
 
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
         if(curuser.mycurprojects.size < 3){
-            curuser.mycurprojects.add(projects("","","", "","",arrayListOf(), arrayListOf()))
+            curuser.mycurprojects.add(-1)
         }
         val recentsAdaptor: recyclerviewRecentsAdaptor
         recentsAdaptor = recyclerviewRecentsAdaptor(curuser.mycurprojects)

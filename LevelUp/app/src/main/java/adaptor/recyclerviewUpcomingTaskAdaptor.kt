@@ -13,8 +13,8 @@ import com.a706012110039.levelup.databinding.CardviewRecentprojectsBinding
 import model.projects
 
 
-class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<Int>) :
-        RecyclerView.Adapter<recyclerviewRecentsAdaptor.ViewHolder>() {
+class recyclerviewUpcomingTaskAdaptor(private val dataSet: ArrayList<Int>) :
+        RecyclerView.Adapter<recyclerviewUpcomingTaskAdaptor.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = CardviewRecentprojectsBinding.bind(itemView)

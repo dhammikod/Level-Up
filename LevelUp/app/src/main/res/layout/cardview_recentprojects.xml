@@ -29,8 +29,8 @@
 
             <ImageView
                 android:id="@+id/logoprojectimage"
-                android:layout_width="127dp"
-                android:layout_height="127dp"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
                 tools:srcCompat="@drawable/ic_baseline_add_24" />
 
         </androidx.cardview.widget.CardView>
