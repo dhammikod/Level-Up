@@ -24,7 +24,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
             app:cardCornerRadius="100dp">
 
@@ -32,9 +31,8 @@
                 android:id="@+id/logoprojectimage"
                 android:layout_width="127dp"
                 android:layout_height="127dp"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
                 tools:srcCompat="@drawable/ic_baseline_add_24" />
+
         </androidx.cardview.widget.CardView>
 
     </androidx.cardview.widget.CardView>

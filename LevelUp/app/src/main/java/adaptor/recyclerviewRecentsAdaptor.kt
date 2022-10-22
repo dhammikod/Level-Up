@@ -1,14 +1,15 @@
 package adaptor
 
+import android.icu.number.NumberFormatter.with
+import android.icu.number.NumberRangeFormatter.with
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.a706012110039.levelup.R
 import com.a706012110039.levelup.databinding.CardviewRecentprojectsBinding
+import com.squareup.picasso.Picasso
 import model.projects
 
 
@@ -21,8 +22,10 @@ class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<projects>) :
         fun setdata(data: projects){
             if(!data.title.isNullOrBlank()){
                 if(!data.logoproject.isNullOrBlank()){
-                    binding.logoprojectimage.setImageURI(Uri.parse(data.logoproject))
+                   binding.logoprojectimage.setImageURI(Uri.parse(data.logoproject))
                 }
+            }else{
+                binding.logoprojectimage.setImageResource(R.drawable.ic_baseline_add_24)
             }
         }
     }
@@ -39,8 +42,6 @@ class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<projects>) :
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
         viewHolder.setdata(dataSet[position])
     }
 
