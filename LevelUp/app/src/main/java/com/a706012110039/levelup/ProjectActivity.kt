@@ -1,15 +1,13 @@
 package com.a706012110039.levelup
 
+import Database.GlobalVar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View.inflate
 import androidx.fragment.app.Fragment
 import com.a706012110039.levelup.databinding.ActivityBottomnavbarActiityBinding.inflate
 import com.a706012110039.levelup.databinding.ActivityProjectBinding
-import model.discussion
-import model.projects
-import model.reply
-import model.task
+import model.*
 
 class ProjectActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProjectBinding
@@ -21,7 +19,7 @@ class ProjectActivity : AppCompatActivity() {
 
 
 
-
+        dummydata()
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
@@ -47,9 +45,16 @@ class ProjectActivity : AppCompatActivity() {
     }
 
     private fun dummydata(){
-    val roles=ArrayList<String>()
+        val roles=ArrayList<String>()
         roles.add("Doctor")
         roles.add("Programmer")
+
+        val projectss=ArrayList<Int>()
+        projectss.add(0)
+        projectss.add(1)
+
+        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss))
+
 
         val replies=ArrayList<reply>()
         replies.add(reply(0,"hellow"))
@@ -62,16 +67,14 @@ class ProjectActivity : AppCompatActivity() {
 
         val tasks=ArrayList<task>()
         tasks.add(task("Start","Plan to start","9 December 2022",0,"Done"))
-        tasks.add(task("Start","Plan to start","9 December 2022",0,"Done"))
+        tasks.add(task("Start","Plan to start","9 December 2022",0,"Y"))
 
         Database.GlobalVar.projects.add(
             projects(0,"Projek 1","","Ini adalah dummy project pertama","Mohon join yuk","9 Oktober 2022", roles, discussions ,tasks,
-                arrayListOf())
+                arrayListOf(),0)
         )
 
         Database.GlobalVar.projects[0].enrolleduser.add(0)
-
-        Database.GlobalVar.users[0].mycurprojects.add(0)
 
 
 

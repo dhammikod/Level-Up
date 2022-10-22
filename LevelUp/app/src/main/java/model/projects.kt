@@ -10,5 +10,6 @@ data class projects(
     val neededprofession: ArrayList<String>,
     val discussion: ArrayList<discussion>,
     val tasks:ArrayList<task>,
-    val enrolleduser:ArrayList<Int>
+    val enrolleduser:ArrayList<Int>,
+    val creator: Int
 )
