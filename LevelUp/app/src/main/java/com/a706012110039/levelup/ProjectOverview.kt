@@ -20,13 +20,14 @@ class ProjectOverview : Fragment() {
     ): View? {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_project_overview, container, false)
-
+        binding = FragmentProjectOverviewBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentProjectOverviewBinding.inflate(layoutInflater)
+
+
         val roles=ArrayList<String>()
         roles.add("Doctor")
         roles.add("Programmer")
@@ -66,8 +67,8 @@ class ProjectOverview : Fragment() {
     }
 
     private fun start(){
-        projectcreatortv.text = GlobalVar.users[GlobalVar.projects[GlobalVar.projects.size-1].creator].name
-        projecttitletv.text= GlobalVar.projects[GlobalVar.projects.size-1].title
+        binding.projectcreatortv.text = GlobalVar.users[GlobalVar.projects[GlobalVar.projects.size-1].creator].name
+        binding.projecttitletv.text= GlobalVar.projects[GlobalVar.projects.size-1].title
 
     }
 
