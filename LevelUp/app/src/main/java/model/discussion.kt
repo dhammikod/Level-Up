@@ -3,7 +3,7 @@ package model
 data class discussion(
     val title: String,
     val description: String,
-    val creator: user,
+    val creator: Int,
     val replies: ArrayList<reply>
 
 ){
