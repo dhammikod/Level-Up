@@ -15,26 +15,16 @@ import model.projects
 class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<projects>) :
         RecyclerView.Adapter<recyclerviewRecentsAdaptor.ViewHolder>() {
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = CardviewRecentprojectsBinding.bind(itemView)
-        var img : ImageView
 
-        init{
-            img = view.findViewById(R.id.logoprojectimage)
+        fun setdata(data: projects){
+            if(!data.title.isNullOrBlank()){
+                if(!data.logoproject.isNullOrBlank()){
+                    binding.logoprojectimage.setImageURI(Uri.parse(data.logoproject))
+                }
+            }
         }
-
-//        fun setdata(data: Result){
-//            binding.tvTitleNowPlaying.text = data.title
-//            binding.tvReleased.text = data.release_date
-//            binding.cvNowplaying.setOnClickListener {
-//                val intent = Intent(it.context, Activity_Movie_Detail::class.java).putExtra("movieid",data.id)
-//                it.context.startActivity(intent)
-//            }
-//        }
     }
 
     // Create new views (invoked by the layout manager)
@@ -51,11 +41,7 @@ class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<projects>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        if(!dataSet[position].title.isNullOrBlank()){
-            if(!dataSet[position].logoproject.isNullOrBlank()){
-                viewHolder.img.setImageURI(Uri.parse(dataSet[position].logoproject))
-            }
-        }
+        viewHolder.setdata(dataSet[position])
     }
 
     // Return the size of your dataset (invoked by the layout manager)

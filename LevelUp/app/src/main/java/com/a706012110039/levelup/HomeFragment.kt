@@ -19,9 +19,9 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         viewbind = FragmentHomeBinding.inflate(layoutInflater)
-        return viewbind.root
-
         adddummydatarecents()
+
+        return viewbind.root
     }
 
     fun adddummydatarecents(){
@@ -31,8 +31,6 @@ class HomeFragment : Fragment() {
         curuser = user("dham","email","free",0,0,0, arrayListOf("teacher", "bla1"), arrayListOf(),
             arrayListOf())
         projects = projects("title","cilukba","lorem50", arrayListOf())
-        curuser.mycurprojects.add(projects)
-        curuser.mycurprojects.add(projects)
         curuser.mycurprojects.add(projects)
 
 
