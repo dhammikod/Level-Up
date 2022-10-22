@@ -3,17 +3,22 @@
 
     <item
         android:id="@+id/overviewmenu"
-        android:title="Overview" />
+        android:title="Overview"
+        android:visible="true" />
     <item
         android:id="@+id/taskmenu"
-        android:title="Task" />
+        android:title="Task"
+        android:visible="true" />
     <item
         android:id="@+id/discussionmenu"
-        android:title="Discussion" />
+        android:title="Discussion"
+        android:visible="true" />
     <item
         android:id="@+id/filemenu"
-        android:title="Files" />
+        android:title="Files"
+        android:visible="true" />
     <item
         android:id="@+id/teammenu"
-        android:title="Team" />
+        android:title="Team"
+        android:visible="true" />
 </menu>

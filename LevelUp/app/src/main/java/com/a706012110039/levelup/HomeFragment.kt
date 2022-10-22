@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import adaptor.recyclerviewRecentsAdaptor
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,7 +21,13 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         viewbind = FragmentHomeBinding.inflate(layoutInflater)
         adddummydatarecents()
+        viewbind.button.setOnClickListener(){
 
+            val myIntent = Intent(context,ProjectActivity::class.java).apply{
+//                putExtra("position",position)
+            }
+            startActivity(myIntent)
+        }
         return viewbind.root
     }
 
@@ -30,7 +37,8 @@ class HomeFragment : Fragment() {
 
         curuser = user("dham","email","free",0,0,0, arrayListOf("teacher", "bla1"), arrayListOf(),
             arrayListOf())
-        projects = projects("title","cilukba","lorem50", arrayListOf())
+        projects = projects("title","cilukba","lorem50","penting","oktober", arrayListOf(),
+            arrayListOf())
         curuser.mycurprojects.add(projects)
 
 
@@ -39,7 +47,7 @@ class HomeFragment : Fragment() {
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
         if(curuser.mycurprojects.size < 3){
-            curuser.mycurprojects.add(projects("","","", arrayListOf()))
+            curuser.mycurprojects.add(projects("","","", "","",arrayListOf(), arrayListOf()))
         }
         val recentsAdaptor: recyclerviewRecentsAdaptor
         recentsAdaptor = recyclerviewRecentsAdaptor(curuser.mycurprojects)

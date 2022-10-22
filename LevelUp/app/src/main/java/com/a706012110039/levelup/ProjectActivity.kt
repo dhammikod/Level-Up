@@ -17,6 +17,8 @@ class ProjectActivity : AppCompatActivity() {
 
 
 
+
+
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.teammenu -> setcurfragment(ProjectTeams())
@@ -39,6 +41,15 @@ class ProjectActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun dummydata(){
+        Database.GlobalVar.users[0].mypastprojects
+
+
+
+    }
+
+
 
 
 }
