@@ -7,5 +7,6 @@ class GlobalVar {
     companion object{
         val users = ArrayList<user>()
         val projects = ArrayList<projects>()
+        val news = ArrayList<Int>()
     }
 }
