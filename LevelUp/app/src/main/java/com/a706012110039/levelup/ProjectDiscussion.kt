@@ -4,6 +4,7 @@ import Database.GlobalVar
 import Interface.CardListener
 import adaptor.RecyclerViewProjectDsicussionsAdapter
 import adaptor.RecylcerViewProjectTeamsAdapter
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -30,7 +31,10 @@ class ProjectDiscussion : Fragment(R.layout.fragment_project_discussion), CardLi
 
 
     override fun onCardClick(position: Int) {
-        TODO("Not yet implemented")
+        val myIntent = Intent(context,ReplyDiscussion::class.java).apply{
+                putExtra("position",position)
+        }
+        startActivity(myIntent)
     }
 
 }

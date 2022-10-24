@@ -2,13 +2,17 @@ package adaptor
 
 import Database.GlobalVar
 import Interface.CardListener
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.a706012110039.levelup.ProjectActivity
 import com.a706012110039.levelup.R
+import com.a706012110039.levelup.databinding.CardviewDiscussionsBinding
 import model.discussion
 
 class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<discussion>, val cardListener: CardListener) :
@@ -19,11 +23,13 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
          * (custom ViewHolder).
          */
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
             val title: TextView
             val desc: TextView
             val creator: TextView
             val reply1:TextView
             val reply2:TextView
+            val replybutton:Button
 
             init {
                 // Define click listener for the ViewHolder's View.
@@ -32,6 +38,7 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
                 creator= view.findViewById(R.id.discussioncreatortv)
                 reply1 = view.findViewById(R.id.replyincardtv1)
                 reply2 = view.findViewById(R.id.replyincardtv2)
+                replybutton =  view.findViewById(R.id.replydiscussionbutton)
             }
         }
 
@@ -67,6 +74,9 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
                 viewHolder.reply1.isVisible = false
             }
 
+        viewHolder.replybutton.setOnClickListener(){
+           cardListener.onCardClick(position)
+        }
         }
 
         // Return the size of your dataset (invoked by the layout manager)

@@ -44,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/discussionrepdesctv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"

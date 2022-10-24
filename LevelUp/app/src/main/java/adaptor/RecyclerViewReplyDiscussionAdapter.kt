@@ -1,0 +1,4 @@
+package adaptor
+
+class RecyclerViewReplyDiscussionAdapter {
+}
