@@ -10,6 +10,5 @@ data class user(
     val comments: Int,
     val profession: ArrayList<String>,
     val mycurprojects: ArrayList<Int>,
-    val mypastprojects: ArrayList<Int>,
-    val profilepic: String
+    val mypastprojects: ArrayList<Int>
 )

@@ -8,6 +8,10 @@ import androidx.fragment.app.Fragment
 import com.a706012110039.levelup.databinding.ActivityBottomnavbarActiityBinding.inflate
 import com.a706012110039.levelup.databinding.ActivityProjectBinding
 import model.*
+import java.text.SimpleDateFormat
+import java.time.Year
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ProjectActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProjectBinding
@@ -53,31 +57,32 @@ class ProjectActivity : AppCompatActivity() {
         projectss.add(0)
         projectss.add(1)
 
-        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss,""))
+        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss))
 
-        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss,""))
+        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss))
 
-        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss,""))
+        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles,projectss,projectss))
 
         val replies=ArrayList<reply>()
         replies.add(reply(0,"hellow"))
         replies.add(reply(0,"hi"))
 
 
-        val discussions=ArrayList<model.discussion>()
+        val discussions=ArrayList<discussion>()
         discussions.add(discussion("Salary","How much is salary",0,replies))
         discussions.add(discussion("Salary","How much is salary",0,replies))
-
+        val date = Date(
+        )
         val tasks=ArrayList<task>()
-        tasks.add(task("Start","Plan to start","9 December 2022",0,"Done"))
-        tasks.add(task("Start","Plan to start","9 December 2022",0,"Y"))
+        tasks.add(task("Start","Plan to start",date,0,"Done"))
+        tasks.add(task("Start","Plan to start",date,0,"Y"))
 
         Database.GlobalVar.projects.add(
-            projects(0,"Projek 1","","Ini adalah dummy project pertama","Mohon join yuk","9 Oktober 2022", roles, discussions ,tasks,
+            projects(0,"Projek 1","","Ini adalah dummy project pertama","Mohon join yuk","9 Oktober 2022", roles,discussions ,tasks,
                 arrayListOf(),0)
         )
-
-        Database.GlobalVar.projects[0].enrolleduser.add(0)
+        GlobalVar.projects[GlobalVar.projects.size-1].discussion.add(discussions[0])
+        GlobalVar.projects[0].enrolleduser.add(0)
 
 
 

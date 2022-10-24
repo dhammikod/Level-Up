@@ -48,7 +48,6 @@ class RecylcerViewProjectTeamsAdapter(private val dataSet: ArrayList<user>, val 
         // contents of the view with that element
         viewHolder.teamname.text = dataSet[position].name
         viewHolder.teamrole.text = dataSet[position].profession[0]
-        viewHolder.image.setImageURI(dataSet[position].profilepic.toUri())
     }
 
     // Return the size of your dataset (invoked by the layout manager)
