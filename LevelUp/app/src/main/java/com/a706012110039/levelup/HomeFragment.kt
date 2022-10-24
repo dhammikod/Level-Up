@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
             iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
         }
         curuser = user(iduser,"dham","email","free",0,0,0, arrayListOf("teacher", "bla1"), arrayListOf(),
-            arrayListOf(),"string")
+            arrayListOf())
 
         var idproject = 0
 
