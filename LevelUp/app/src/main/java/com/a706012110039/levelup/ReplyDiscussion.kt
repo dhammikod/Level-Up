@@ -14,7 +14,8 @@ import kotlinx.android.synthetic.main.cardview_discussions.*
 import kotlinx.android.synthetic.main.fragment_project_discussion.*
 import kotlinx.android.synthetic.main.fragment_project_tasks.*
 
-class ReplyDiscussion : AppCompatActivity() {
+class ReplyDiscussion : AppCompatActivity(), CardListener {
+    private var adapter= RecyclerViewReplyDiscussionAdapter(GlobalVar.projects[GlobalVar.projects.size-1].discussion[0].replies,this)
     private lateinit var binding:ActivityReplyDiscussionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,10 @@ class ReplyDiscussion : AppCompatActivity() {
 
        val layoutManager = GridLayoutManager(baseContext, 1)
         repliesrv.layoutManager = layoutManager
-        projectdiscussionsrv.adapter = adapter.sa
+        repliesrv.adapter = adapter
+    }
+
+    override fun onCardClick(position: Int) {
+        TODO("Not yet implemented")
     }
 }
