@@ -3,22 +3,32 @@
 
     <item
         android:id="@+id/overviewmenu"
+        android:checked="false"
+        android:icon="@android:drawable/ic_dialog_info"
         android:title="Overview"
         android:visible="true" />
     <item
         android:id="@+id/taskmenu"
+        android:checked="false"
+        android:icon="@drawable/ic_baseline_card_travel_24"
         android:title="Task"
         android:visible="true" />
     <item
         android:id="@+id/discussionmenu"
+        android:checked="false"
+        android:icon="@android:drawable/stat_notify_chat"
         android:title="Discussion"
         android:visible="true" />
     <item
         android:id="@+id/filemenu"
+        android:checked="false"
+        android:icon="@android:drawable/ic_menu_save"
         android:title="Files"
         android:visible="true" />
     <item
         android:id="@+id/teammenu"
+        android:checked="false"
+        android:icon="@android:drawable/ic_menu_myplaces"
         android:title="Team"
         android:visible="true" />
 </menu>

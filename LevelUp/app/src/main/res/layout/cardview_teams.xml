@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
                 app:layout_constraintTop_toTopOf="@+id/imageView9" />
 
@@ -47,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
+                android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="@+id/teamnametv"
                 app:layout_constraintTop_toBottomOf="@+id/teamnametv" />
         </androidx.constraintlayout.widget.ConstraintLayout>
