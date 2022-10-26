@@ -74,14 +74,21 @@ class ProjectActivity : AppCompatActivity() {
         val date = Date(
         )
         val tasks=ArrayList<task>()
-        tasks.add(task("Start","Plan to start",date,0,"Done"))
-        tasks.add(task("Start","Plan to start",date,0,"Y"))
+        tasks.add(task("Belum","Plan to start",date,0,"N"))
+        tasks.add(task("Sudah","Finish to start",date,0,"Y"))
 
+        val files=ArrayList<files>()
+        files.add(files("filesatu","","ini adalah file pertama"))
+        files.add(files("filedua","","ini adalah file kedua"))
+        files.add(files("filesatu","","ini adalah file pertama"))
+        files.add(files("filedua","","ini adalah file kedua"))
         Database.GlobalVar.projects.add(
             projects(0,"Projek 1","","Ini adalah dummy project pertama","Mohon join yuk","9 Oktober 2022", roles,discussions ,tasks,
-                arrayListOf(),0)
+                arrayListOf(),0,files)
         )
         GlobalVar.projects[GlobalVar.projects.size-1].discussion.add(discussions[0])
+//        GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(tasks[0])
+//        GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(tasks[1])
         GlobalVar.projects[0].enrolleduser.add(0)
 
 

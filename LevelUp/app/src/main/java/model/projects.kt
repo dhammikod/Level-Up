@@ -11,5 +11,6 @@ data class projects(
     val discussion: ArrayList<discussion>,
     val tasks:ArrayList<task>,
     val enrolleduser:ArrayList<Int>,
-    val creator: Int
+    val creator: Int,
+    val files: ArrayList<files>
 )
