@@ -8,7 +8,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
         android:layout_height="105dp"
-        android:backgroundTint="@color/lightbluebg"
+        android:backgroundTint="#03A9F4"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +26,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/tasknametv"
                 app:layout_constraintTop_toBottomOf="@+id/tasknametv" />
@@ -45,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/taskdetailtv"
                 app:layout_constraintTop_toBottomOf="@+id/taskdetailtv" />
@@ -56,7 +59,7 @@
                 android:layout_marginTop="5dp"
                 app:layout_constraintStart_toStartOf="@+id/taskduetv"
                 app:layout_constraintTop_toBottomOf="@+id/taskduetv"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+                app:srcCompat="@drawable/ic_baseline_person_24" />
 
             <TextView
                 android:id="@+id/taskpictv"
@@ -64,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="TextView"
+                android:textColor="#000000"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView8"
                 app:layout_constraintStart_toEndOf="@+id/imageView8"
                 app:layout_constraintTop_toTopOf="@+id/imageView8" />

@@ -3,15 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#FFFFFF"
     tools:context=".ProjectDiscussion">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:backgroundTint="#FFFFFF">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/projectdiscussionsrv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="-109dp"
+            tools:layout_editor_absoluteY="-130dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

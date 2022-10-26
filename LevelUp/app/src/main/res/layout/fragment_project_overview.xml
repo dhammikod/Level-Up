@@ -4,23 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProjectOverview" >
+    android:backgroundTint="#FFFFFF"
+    tools:context=".ProjectOverview">
 
-    <ImageView
-        android:id="@+id/projectimage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/projecttitletv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="25sp"
         app:layout_constraintStart_toEndOf="@+id/projectimage"
         app:layout_constraintTop_toTopOf="@+id/projectimage" />
 
@@ -28,8 +24,10 @@
         android:id="@+id/projectcreatortv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/projectimage"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/projecttitletv"
         app:layout_constraintTop_toBottomOf="@+id/projecttitletv" />
 
     <TextView
@@ -38,15 +36,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="Overview"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/projectimage"
         app:layout_constraintTop_toBottomOf="@+id/projectimage" />
 
     <TextView
         android:id="@+id/projectoverviewtv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -54,15 +57,23 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Started At"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/projectoverviewtv"
         app:layout_constraintTop_toBottomOf="@+id/projectoverviewtv" />
 
     <TextView
         android:id="@+id/projectstarttv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -72,6 +83,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:text="Important Notes"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/projectstarttv"
         app:layout_constraintTop_toBottomOf="@+id/projectstarttv" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Important Notes"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/projectnotestv"
+        app:layout_constraintStart_toStartOf="@+id/projectnotestv" />
+
+    <ImageView
+        android:id="@+id/projectimage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/logolvlup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

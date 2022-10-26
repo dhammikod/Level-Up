@@ -69,7 +69,11 @@ class RecylcerViewProjectTasksAdapter (private val data: ArrayList<task>, val ca
 
         else if (data[position].status =="N"){
             viewHolder.status.isChecked = false}
+
+        viewHolder.pic.text ="Everyone"
     }
+
+
 
     override fun getItemCount() = data.size
 }

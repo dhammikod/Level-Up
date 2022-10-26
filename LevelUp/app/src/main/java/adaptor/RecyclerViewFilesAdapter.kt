@@ -52,7 +52,7 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.name.text = dataSet[position].name
-        viewHolder.image.setImageURI(dataSet[position].imageuri.toUri())
+//        viewHolder.image.setImageURI(dataSet[position].imageuri.toUri())
 
     }
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProjectTasks" >
+    android:backgroundTint="#FFFFFF"
+    tools:context=".ProjectTasks">
 
     <ScrollView
         android:layout_width="0dp"
@@ -26,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Late"
+                android:text="To-Do"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,26 +45,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Upcoming"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/textView9"
-                app:layout_constraintTop_toBottomOf="@+id/latetaskrv" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/upcomingtaskrv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@+id/latetaskrv"
-                app:layout_constraintStart_toStartOf="@+id/textView12"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-            <TextView
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,18 +52,20 @@
                 android:text="Done"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/upcomingtaskrv"
-                app:layout_constraintTop_toBottomOf="@+id/upcomingtaskrv" />
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/latetaskrv" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/donetaskrv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/upcomingtaskrv"
-                app:layout_constraintStart_toStartOf="@+id/upcomingtaskrv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
