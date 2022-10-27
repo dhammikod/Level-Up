@@ -67,6 +67,7 @@ class HomeFragment : Fragment() {
 
         var idproject = 0
 
+        if  (GlobalVar.projects.size<1){
         for(i in 0..5){
             if (GlobalVar.users.size > 0){
                 idproject = GlobalVar.users[GlobalVar.users.size-1].id + 1
@@ -77,7 +78,7 @@ class HomeFragment : Fragment() {
         }
         curuser.mycurprojects.add(0)
         curuser.mycurprojects.add(1)
-
+        }
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
