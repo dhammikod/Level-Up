@@ -15,6 +15,7 @@
             android:id="@+id/projectdiscussionsrv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:backgroundTint="#FFFFFF"
             tools:layout_editor_absoluteX="-109dp"
             tools:layout_editor_absoluteY="-130dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
