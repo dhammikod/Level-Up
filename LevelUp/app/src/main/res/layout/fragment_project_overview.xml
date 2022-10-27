@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
     tools:context=".ProjectOverview">
-
 
 
     <TextView
@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/projecttitletv"
         app:layout_constraintTop_toBottomOf="@+id/projecttitletv" />
