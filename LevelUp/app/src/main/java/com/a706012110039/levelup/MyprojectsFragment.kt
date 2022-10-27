@@ -30,7 +30,7 @@ class MyprojectsFragment : Fragment() {
             viewbind.cvPast.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.bgnotselected))
             viewbind.textView25.setTextColor(resources.getColor(R.color.colornotselected))
             viewbind.cvOngoingdata.isVisible = true
-            viewbind.cardviewpastproject1.isVisible = false
+            viewbind.cvpastproject1.isVisible = false
             viewbind.cardView8.isVisible = false
         }
 
