@@ -78,7 +78,8 @@ class HomeFragment : Fragment() {
                 idproject = GlobalVar.users[GlobalVar.users.size-1].id + 1
             }
             GlobalVar.projects.add(projects(idproject,"title","cilukba","lorem50","penting","oktober", arrayListOf(),
-                arrayListOf(), arrayListOf(), arrayListOf(),1))
+                arrayListOf(), arrayListOf(), arrayListOf(),1,
+                arrayListOf()))
         }
         curuser.mycurprojects.add(0)
         curuser.mycurprojects.add(1)
