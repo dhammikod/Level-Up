@@ -23,6 +23,7 @@ class ReplyDiscussion : AppCompatActivity(), CardListener {
         setContentView(binding.root)
         GetIntent()
         setupRecycler()
+        listener()
     }
 
     private fun GetIntent(){
@@ -31,7 +32,12 @@ class ReplyDiscussion : AppCompatActivity(), CardListener {
         binding.disucussionmakertv.text = GlobalVar.users[GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].creator].name
         binding.discussionrepdesctv.text = GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].description
     }
+    private fun listener(){
+        binding.imageView12.setOnClickListener(){
+            this.finish()
+        }
 
+    }
     fun setupRecycler(){
 
        val layoutManager = GridLayoutManager(baseContext, 1)

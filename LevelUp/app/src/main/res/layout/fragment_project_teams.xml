@@ -4,11 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:backgroundTint="#FFD7D7"
+    android:backgroundTint="#FFFFFF"
     tools:context=".ProjectTeams">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/projectteamsrv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF" />
 </FrameLayout>
