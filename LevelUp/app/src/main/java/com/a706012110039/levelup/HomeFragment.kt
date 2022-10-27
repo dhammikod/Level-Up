@@ -28,13 +28,7 @@ class HomeFragment : Fragment() {
         adddummydatarecents()
         tesads()
         tesnews()
-        viewbind.button.setOnClickListener(){
 
-            val myIntent = Intent(context,ProjectActivity::class.java).apply{
-//                putExtra("position",position)
-            }
-            startActivity(myIntent)
-        }
         return viewbind.root
     }
 

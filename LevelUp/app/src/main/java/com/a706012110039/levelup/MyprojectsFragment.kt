@@ -1,5 +1,6 @@
 package com.a706012110039.levelup
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,8 +21,34 @@ class MyprojectsFragment : Fragment() {
         viewbind.cvOngoingdata.isVisible = false
         switcher()
 
+        viewbind.cvpastproject1.setOnClickListener(){
+
+            val myIntent = Intent(context,ProjectActivity::class.java).apply{
+//                putExtra("position",position)
+            }
+            startActivity(myIntent)
+        }
+
+        viewbind.cardView8.setOnClickListener(){
+
+            val myIntent = Intent(context,ProjectActivity::class.java).apply{
+//                putExtra("position",position)
+            }
+            startActivity(myIntent)
+        }
+
+        viewbind.seedetails.setOnClickListener(){
+
+            val myIntent = Intent(context,ProjectActivity::class.java).apply{
+//                putExtra("position",position)
+            }
+            startActivity(myIntent)
+        }
         return viewbind.root
     }
+
+
+
 
     fun switcher(){
         viewbind.cvOngoing.setOnClickListener {
