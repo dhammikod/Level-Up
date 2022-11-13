@@ -56,14 +56,6 @@ class HomeFragment : Fragment() {
     }
 
     fun adddummydatarecents(){
-        var curuser: user
-
-        var iduser = 0
-        if (GlobalVar.users.size > 0){
-            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-        }
-        curuser = user(iduser,"dham","email","free",0,0,0, arrayListOf("teacher", "bla1"), arrayListOf(),
-            arrayListOf())
 
         var idproject = 0
 
@@ -76,18 +68,21 @@ class HomeFragment : Fragment() {
                 arrayListOf(), arrayListOf(), arrayListOf(),1,
                 arrayListOf()))
         }
-        curuser.mycurprojects.add(0)
-        curuser.mycurprojects.add(1)
+            GlobalVar.users[GlobalVar.curuser].mycurprojects.add(0)
+
         }
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
         //jangan hapus yang ini soalnya mau di pakai nanti
-        if(curuser.mycurprojects.size < 3){
-            curuser.mycurprojects.add(-1)
+        if(GlobalVar.users[GlobalVar.curuser].mycurprojects.size < 3 && !GlobalVar.users[GlobalVar.curuser].mycurprojects.contains(-1)){
+            GlobalVar.users[GlobalVar.curuser].mycurprojects.add(-1)
+        }else if(GlobalVar.users[GlobalVar.curuser].mycurprojects.size > 3 && GlobalVar.users[GlobalVar.curuser].mycurprojects.contains(-1)){
+            GlobalVar.users[GlobalVar.curuser].mycurprojects.remove(-1)
         }
+
         val recentsAdaptor: recyclerviewRecentsAdaptor
-        recentsAdaptor = recyclerviewRecentsAdaptor(curuser.mycurprojects)
+        recentsAdaptor = recyclerviewRecentsAdaptor(GlobalVar.users[GlobalVar.curuser].mycurprojects)
         viewbind.RVrecentprojects.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.HORIZONTAL, false)
         viewbind.RVrecentprojects.adapter = recentsAdaptor
     }

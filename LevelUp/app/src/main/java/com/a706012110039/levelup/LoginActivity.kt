@@ -1,5 +1,6 @@
 package com.a706012110039.levelup
 
+import Database.GlobalVar
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.Login.setOnClickListener {
             val Intent = Intent(this, BottomnavbarActiity::class.java)
+            GlobalVar.curuser = 0
             startActivity(Intent)
         }
     }

@@ -1,5 +1,6 @@
 package com.a706012110039.levelup
 
+import Database.GlobalVar
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,12 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         binding.Signup.setOnClickListener {
+            var iduser = 0
+            if (GlobalVar.users.size > 0){
+                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+            }
+            GlobalVar.users.add(user(iduser,"quantum","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+                arrayListOf(), arrayListOf()))
             finish()
         }
 

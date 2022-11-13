@@ -29,7 +29,7 @@ class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<Int>) :
             }
 
             if(indexproyek == -1){
-                binding.logoprojectimage.setImageResource(R.drawable.ic_baseline_add_24)
+                binding.logoprojectimage.setImageResource(R.drawable.ic_baseline_add_black)
             }else if(!data.logoproject.isNullOrBlank()){
                 binding.logoprojectimage.setImageURI(Uri.parse(data.logoproject))
             }
