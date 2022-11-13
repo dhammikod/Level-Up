@@ -97,7 +97,7 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="60dp"
+        android:layout_width="50dp"
         android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_baseline_add_24"
@@ -107,7 +107,7 @@
 
     <ImageView
         android:id="@+id/imageView17"
-        android:layout_width="60dp"
+        android:layout_width="50dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_baseline_search_24"

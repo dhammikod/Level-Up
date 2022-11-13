@@ -35,9 +35,9 @@ class HomeFragment : Fragment() {
     fun tesnews(){
         var listnews : ArrayList<news>
         listnews = ArrayList()
-        listnews.add(news("news1","dhamPT","uri"))
-        listnews.add(news("news2","hagen.Co","uri"))
-        listnews.add(news("news3","Ke-VIN-cent","uri"))
+        listnews.add(news("Plastico Corp, a recyling project turned business","BBC News","news_pic_1"))
+        listnews.add(news("Animator, Combining puppets and animaton bringing back nostalgia","Shaun Whitore","news_pic_2"))
+        listnews.add(news("Foodste, Leftover food as potential to start a business","BBC News","news_pic_3"))
 
         val newsAdaptor: RecyclerViewNewsAdaptor
         newsAdaptor = RecyclerViewNewsAdaptor(listnews)
@@ -48,9 +48,9 @@ class HomeFragment : Fragment() {
     fun tesads(){
         val imageList = ArrayList<SlideModel>() // Create image list
 
-        imageList.add(SlideModel(R.drawable.news1, "news 1",ScaleTypes.FIT))
-        imageList.add(SlideModel(R.drawable.news2, "news 2",ScaleTypes.FIT))
-        imageList.add(SlideModel(R.drawable.news3, "news 3",ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.news1, ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.news2,ScaleTypes.FIT))
+        imageList.add(SlideModel(R.drawable.news3, ScaleTypes.FIT))
 
         viewbind.carouselnews.setImageList(imageList)
     }
