@@ -5,7 +5,7 @@ data class projects(
     val title: String,
     val logoproject: String,
     val overview: String,
-    val notes: String,
+    val notes: String?,
     val startdate: String,
     val neededprofession: ArrayList<String>,
     val discussion: ArrayList<discussion>,

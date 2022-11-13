@@ -16,6 +16,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
+
+        GlobalVar.users.add(user(1,"1","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+            arrayListOf(), arrayListOf()))
+        GlobalVar.users.add(user(2,"2","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+            arrayListOf(), arrayListOf()))
+        GlobalVar.users.add(user(3,"3","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+            arrayListOf(), arrayListOf()))
+        GlobalVar.users.add(user(4,"4","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+            arrayListOf(), arrayListOf()))
+        GlobalVar.users.add(user(5,"5","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+            arrayListOf(), arrayListOf()))
+
+
+
+
+
+
         binding.Signup.setOnClickListener {
             var iduser = 0
             if (GlobalVar.users.size > 0){
@@ -23,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             }
             GlobalVar.users.add(user(iduser,"quantum","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
                 arrayListOf(), arrayListOf()))
+
             finish()
         }
 

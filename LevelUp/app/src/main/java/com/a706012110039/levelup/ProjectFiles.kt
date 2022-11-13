@@ -25,7 +25,9 @@ class ProjectFiles : Fragment(R.layout.fragment_project_files), CardListener {
     fun setupRecycler(){
 
         projectfilesrv.layoutManager = GridLayoutManager(context, 3)
-        projectfilesrv.adapter = RecyclerViewFilesAdapter(GlobalVar.projects[GlobalVar.projects.size-1].files, this)
+        projectfilesrv.adapter = GlobalVar.projects[GlobalVar.projects.size-1].files?.let {
+            RecyclerViewFilesAdapter(it, this)
+        }
     }
 
     override fun onCardClick(position: Int) {

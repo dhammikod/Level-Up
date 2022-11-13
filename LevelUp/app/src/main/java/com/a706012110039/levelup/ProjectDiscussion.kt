@@ -26,7 +26,9 @@ class ProjectDiscussion : Fragment(R.layout.fragment_project_discussion), CardLi
     fun setupRecycler(){
 
         projectdiscussionsrv.layoutManager = GridLayoutManager(context, 1)
-        projectdiscussionsrv.adapter = RecyclerViewProjectDsicussionsAdapter(GlobalVar.projects[GlobalVar.projects.size-1].discussion, this)
+        projectdiscussionsrv.adapter = GlobalVar.projects[GlobalVar.projects.size-1].discussion?.let {
+            RecyclerViewProjectDsicussionsAdapter(it, this)
+        }
     }
 
 

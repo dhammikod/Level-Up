@@ -118,7 +118,7 @@ class ProjectActivity : AppCompatActivity() {
 //        GlobalVar.projects[GlobalVar.projects.size-1].discussion.add(discussions[1])
 //        GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(tasks[0])
 //        GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(tasks[1])
-        GlobalVar.projects[0].enrolleduser.add(0)
+        GlobalVar.projects[0].enrolleduser?.add(0)
 
 
 

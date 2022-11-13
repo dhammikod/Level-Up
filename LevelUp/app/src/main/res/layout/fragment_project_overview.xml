@@ -89,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/projectstarttv" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/titleJOBSFORU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
