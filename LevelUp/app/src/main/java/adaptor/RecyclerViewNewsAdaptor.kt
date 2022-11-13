@@ -1,7 +1,9 @@
 package adaptor
 
 import Database.GlobalVar
+import android.content.Context
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,7 @@ import com.a706012110039.levelup.R
 import com.a706012110039.levelup.databinding.CardviewNewsBinding
 import model.news
 import model.projects
+import java.io.File
 
 class RecyclerViewNewsAdaptor(private val dataSet: ArrayList<news>) :
         RecyclerView.Adapter<RecyclerViewNewsAdaptor.ViewHolder>() {
@@ -23,7 +26,11 @@ class RecyclerViewNewsAdaptor(private val dataSet: ArrayList<news>) :
         val binding = CardviewNewsBinding.bind(itemView)
 
         fun setdata(data: news){
-            binding.imageView10.setImageURI(data.headerimage.toUri())
+            val context: Context = binding.imageView10.getContext()
+            val id: Int = context.getResources()
+                .getIdentifier(data.headerimage, "drawable", context.getPackageName())
+            Log.d("here", id.toString())
+            binding.imageView10.setImageResource(id)
             binding.newsitem.text = data.title
             binding.newspublisher.text = data.publisher
         }
