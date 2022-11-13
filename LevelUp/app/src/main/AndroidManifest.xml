@@ -16,6 +16,9 @@
         android:theme="@style/Theme.LevelUp"
         tools:targetApi="31">
         <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
+        <activity
             android:name=".EnrollProject_Activity"
             android:exported="false" />
         <activity
@@ -45,7 +48,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
