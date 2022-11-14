@@ -30,32 +30,32 @@ class SplashFragment : Fragment() {
                 iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
             }
             GlobalVar.users.add(
-                user(iduser,"quantum","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+                user(iduser,"quantum","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
                     arrayListOf(), arrayListOf())
             )
 
             GlobalVar.users.add(
-                user(1,"1","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+                user(1,"1","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
                     arrayListOf(), arrayListOf())
             )
 
             GlobalVar.users.add(
-                user(2,"2","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+                user(2,"2","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
                     arrayListOf(), arrayListOf())
             )
 
             GlobalVar.users.add(
-                user(3,"3","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+                user(3,"3","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
                     arrayListOf(), arrayListOf())
             )
 
             GlobalVar.users.add(
-                user(4,"4","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+                user(4,"4","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
                     arrayListOf(), arrayListOf())
             )
 
             GlobalVar.users.add(
-                user(5,"5","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+                user(5,"5","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
                     arrayListOf(), arrayListOf())
             )
 

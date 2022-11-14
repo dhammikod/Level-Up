@@ -79,15 +79,15 @@ class ProjectActivity : AppCompatActivity() {
         projectss.add(0)
         projectss.add(1)
 
-        GlobalVar.users.add(user(0,"Vincent","vincent@email.com","Premium",0,0,0,roles1,projectss,projectss))
+        GlobalVar.users.add(user(0,"Vincent","password","vincent@email.com","Premium",0,0,0,roles1,projectss,projectss))
 
-        GlobalVar.users.add(user(0,"Dhammiko","vincent@email.com","Premium",0,0,0,roles2,projectss,projectss))
+        GlobalVar.users.add(user(0,"Dhammiko","password","vincent@email.com","Premium",0,0,0,roles2,projectss,projectss))
 
-        GlobalVar.users.add(user(0,"Kevin","vincent@email.com","Premium",0,0,0,roles3,projectss,projectss))
+        GlobalVar.users.add(user(0,"Kevin","password","vincent@email.com","Premium",0,0,0,roles3,projectss,projectss))
 
-        GlobalVar.users.add(user(0,"Ileene","vincent@email.com","Premium",0,0,0,roles4,projectss,projectss))
+        GlobalVar.users.add(user(0,"Ileene","password","vincent@email.com","Premium",0,0,0,roles4,projectss,projectss))
 
-        GlobalVar.users.add(user(0,"Hagen","vincent@email.com","Premium",0,0,0,roles5,projectss,projectss))
+        GlobalVar.users.add(user(0,"Hagen","password","vincent@email.com","Premium",0,0,0,roles5,projectss,projectss))
         val replies1=ArrayList<reply>()
         replies1.add(reply(0,"I'm fine with the original contract"))
         replies1.add(reply(0,"I think I'll do finw with the city's minumum wage"))

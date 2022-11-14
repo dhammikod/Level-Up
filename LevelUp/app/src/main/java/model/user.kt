@@ -1,14 +1,15 @@
 package model
 
 data class user(
-    val id:Int,
-    val name: String,
-    val Email: String,
-    val statuspremium: String,
-    val projectdone: Int,
-    val filesuploaded: Int,
-    val comments: Int,
-    val profession: ArrayList<String>,
-    val mycurprojects: ArrayList<Int>,
-    val mypastprojects: ArrayList<Int>
+    var id:Int,
+    var name: String,
+    var password: String,
+    var Email: String,
+    var statuspremium: String,
+    var projectdone: Int,
+    var filesuploaded: Int,
+    var comments: Int,
+    var profession: ArrayList<String>,
+    var mycurprojects: ArrayList<Int>,
+    var mypastprojects: ArrayList<Int>
 )
