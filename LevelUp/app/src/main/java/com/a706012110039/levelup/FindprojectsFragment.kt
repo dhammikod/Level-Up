@@ -4,6 +4,8 @@ import Database.GlobalVar
 import adaptor.RecyclerViewJobsForYouAdapter
 import adaptor.RecyclerViewNewsAdaptor
 import android.os.Bundle
+import android.provider.Settings.Global
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +29,6 @@ class FindprojectsFragment : Fragment() {
 
 
         viewbind = FragmentFindprojectsBinding.inflate(layoutInflater)
-        dummydata()
         setuprv()
         // Inflate the layout for this fragment
         return viewbind.root
@@ -40,19 +41,6 @@ class FindprojectsFragment : Fragment() {
         viewbind.rvJobsforu.adapter = jobsAdaptor
     }
 
-    fun dummydata(){
 
-        val neededprofessionArray = ArrayList<String>()
-        val discussionArray = ArrayList<discussion>()
-        val tasksArray = ArrayList<task>()
-        val enrolleduserArray = ArrayList<Int>()
-        val filesArray = ArrayList<files>()
-
-        GlobalVar.projects.add(projects(11,"Creative Design", "creative_des","","","",
-            neededprofessionArray,discussionArray,tasksArray,enrolleduserArray,2, filesArray))
-
-        GlobalVar.projects.add(projects(11,"Music Ally", "job_default","","","",
-            neededprofessionArray,discussionArray,tasksArray,enrolleduserArray,3, filesArray))
-    }
 
 }
