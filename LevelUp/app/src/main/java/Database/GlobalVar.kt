@@ -8,5 +8,6 @@ class GlobalVar {
         val users = ArrayList<user>()
         val projects = ArrayList<projects>()
         var curuser = 0
+        var upcomingTask = ArrayList<String>()
     }
 }

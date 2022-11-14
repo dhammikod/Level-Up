@@ -16,6 +16,20 @@
         android:theme="@style/Theme.LevelUp"
         tools:targetApi="31">
         <activity
+            android:name=".ProjectDetailsNotEnrolled"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".userStatus"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SplashActivity"
             android:exported="false" />
         <activity
