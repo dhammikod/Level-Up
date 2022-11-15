@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.textfield.TextInputEditText
@@ -47,6 +48,7 @@ class ProjectDiscussion : Fragment(R.layout.fragment_project_discussion), CardLi
         val addbutton = dialog.findViewById<Button>(R.id.adddiscussionb)
         val disctitle = dialog.findViewById<TextInputEditText>(R.id.discussiontitleinputtext)
         val discdesc = dialog.findViewById<TextInputEditText>(R.id.discussiondescinputtext)
+        val back = dialog.findViewById<ImageView>(R.id.imageView27)
         addbutton?.setOnClickListener(){
             var title = disctitle?.text.toString()
             var desc = discdesc?.text.toString()
@@ -63,8 +65,13 @@ class ProjectDiscussion : Fragment(R.layout.fragment_project_discussion), CardLi
 
 
 
+
+
             dialog.dismiss()
             setupRecycler()
+        }
+        back?.setOnClickListener(){
+            dialog.dismiss()
         }
 
     }

@@ -7,6 +7,8 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
@@ -24,7 +26,6 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener {
 
     var listtodo = ArrayList<task>()
     var listdoneproject = ArrayList<task>()
-    private lateinit var viewbind: ActivityProjectBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecycler()
@@ -75,9 +76,12 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener {
         dialog.show()
 
 
+
         val addbutton = dialog.findViewById<Button>(R.id.addtaskb)
         val tasktitle = dialog.findViewById<TextInputEditText>(R.id.tasktitleinputtext)
         val taskdesc = dialog.findViewById<TextInputEditText>(R.id.taskdescinputtext)
+        val back = dialog.findViewById<ImageView>(R.id.imageView25)
+
         addbutton?.setOnClickListener(){
             var title = tasktitle?.text.toString()
             var desc = taskdesc?.text.toString()
@@ -96,6 +100,10 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener {
 
             dialog.dismiss()
             setupRecycler()
+        }
+
+        back?.setOnClickListener(){
+            dialog.dismiss()
         }
     }
     override fun onCardClick(position: Int) {
