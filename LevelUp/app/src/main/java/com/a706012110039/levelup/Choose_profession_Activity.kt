@@ -49,13 +49,13 @@ class Choose_profession_Activity : AppCompatActivity(),CardListener {
     }
 
     fun setdataprofession(){
-        listprofession.add(profession("UI/UX Designer", R.drawable.logoemail,false))
-        listprofession.add(profession("Backend Developer",R.drawable.news1,false))
-        listprofession.add(profession("Digital Creator",R.drawable.news1,false))
-        listprofession.add(profession("Marketing Manager",R.drawable.news1,false))
-        listprofession.add(profession("Project Manager",R.drawable.news1,false))
-        listprofession.add(profession("Database Engineer",R.drawable.news1,false))
-        listprofession.add(profession("Nutritionist",R.drawable.news1,false))
+        listprofession.add(profession("UI/UX Designer", R.drawable.uiux,false))
+        listprofession.add(profession("Developer",R.drawable.backend,false))
+        listprofession.add(profession("Digital Creator",R.drawable.digitalc,false))
+        listprofession.add(profession("Marketing",R.drawable.marketingm,false))
+        listprofession.add(profession("Accounting",R.drawable.projectm,false))
+        listprofession.add(profession("Database ",R.drawable.databasee,false))
+        listprofession.add(profession("Nutritionist",R.drawable.nutritionist,false))
 
 
         professionadaptor = RecyclerviewChooseProfessionAdapter(listprofession,this)
