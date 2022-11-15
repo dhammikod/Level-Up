@@ -37,9 +37,9 @@ class ProfileFragment : Fragment() {
             val Intent = Intent(activity, SettingActivity::class.java)
             startActivity(Intent)
         }
-        tourguide()
-        if(!tourguidefinished()) {
 
+        if(!tourguidefinished()) {
+            tourguide()
         }
 
         return viewbind.root
@@ -121,9 +121,10 @@ class ProfileFragment : Fragment() {
             TapTarget.forView(viewbind.textView18, "This is your statistics", "This part contains all of your basic information such as name email and your current user status") // All options below are optional
                 .tintTarget(false)
                 .outerCircleColor(R.color.holo_purple)
-                .targetRadius(50)
                 .drawShadow(true)
-                .targetCircleColor(R.color.white),  // Specify the target radius (in dp)
+                .targetCircleColor(R.color.white)
+                .transparentTarget(true)
+                .targetRadius(90),  // Specify the target radius (in dp)
 
             object : TapTargetView.Listener() {
                 override fun onTargetClick(view: TapTargetView) {
@@ -146,7 +147,9 @@ class ProfileFragment : Fragment() {
         TapTargetView.showFor(activity,
             TapTarget.forView(viewbind.feedback, "This is profile functions", "uou can easily enter settings page or also get help using the featues in this tab") // All options below are optional
                 .tintTarget(false)
-                .outerCircleColor(R.color.holo_purple),
+                .outerCircleColor(R.color.holo_purple)
+                .transparentTarget(true)
+                .targetRadius(70),
             object : TapTargetView.Listener() {
                 override fun onTargetClick(view: TapTargetView) {
                     super.onTargetClick(view)
