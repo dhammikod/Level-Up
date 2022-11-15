@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000000"
-    android:backgroundTint="#00FFFFFF">
+    android:background="@drawable/background_putih"
+    app:layout_constraintCircleRadius="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -50,8 +50,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:text="Description"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+                app:layout_constraintStart_toStartOf="@+id/tasktitleinput"
+                app:layout_constraintTop_toBottomOf="@+id/tasktitleinput" />
 
             <TextView
                 android:id="@+id/textView45"
@@ -64,21 +64,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout2"
+                android:id="@+id/taskdescinput"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+                app:layout_constraintEnd_toEndOf="@+id/tasktitleinput"
                 app:layout_constraintStart_toStartOf="@+id/textView46"
                 app:layout_constraintTop_toBottomOf="@+id/textView46">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/taskdescinputtext"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout"
+                android:id="@+id/tasktitleinput"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -88,6 +89,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView45">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tasktitleinputtext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -98,8 +100,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Due"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+                app:layout_constraintStart_toStartOf="@+id/taskdescinput"
+                app:layout_constraintTop_toBottomOf="@+id/taskdescinput" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout3"
@@ -121,7 +123,7 @@
                 android:layout_marginStart="100dp"
                 android:text="For"
                 app:layout_constraintBottom_toBottomOf="@+id/textView59"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+                app:layout_constraintEnd_toEndOf="@+id/taskdescinput"
                 app:layout_constraintStart_toEndOf="@+id/textView59"
                 app:layout_constraintTop_toTopOf="@+id/textView59" />
 
@@ -139,7 +141,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/addtaskb"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
