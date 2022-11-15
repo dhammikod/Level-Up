@@ -39,9 +39,9 @@ class ProjectFiles : Fragment(), CardListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var intent = activity?.intent?.getIntExtra("helena cantik",0)
+        //var intent = activity?.intent?.getIntExtra("helena cantik",0)
         setupRecycler()
-        Log.d(" resolver", contentResolver.toString())
+//        Log.d(" resolver", contentResolver.toString())
 
         binding.addFileFAB.setOnClickListener {
 
@@ -61,8 +61,8 @@ class ProjectFiles : Fragment(), CardListener {
         }
 
 
-        var amin = intent.getStringExtra("dataaa")
-        var contentResolver = activity?.applicationContext?.contentResolver
+//        var amin = intent.getStringExtra("dataaa")
+//        var contentResolver = activity?.applicationContext?.contentResolver
 //    }
     }
 
