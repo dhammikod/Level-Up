@@ -28,9 +28,14 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.Login.setOnClickListener {
-            val Intent = Intent(this, BottomnavbarActiity::class.java)
+            if(selectprofessionfinished()){
+                val Intent = Intent(this, BottomnavbarActiity::class.java)
+                startActivity(Intent)
+            }else{
+                val Intent = Intent(this, Choose_profession_Activity::class.java)
+                startActivity(Intent)
+            }
             GlobalVar.curuser = 0
-            startActivity(Intent)
         }
     }
 
@@ -42,8 +47,12 @@ class LoginActivity : AppCompatActivity() {
 //            val intent = Intent(this, MainActivity::class.java)
             val intent = Intent(this, BottomnavbarActiity::class.java)
             startActivity(intent)
-            finish()
         }
 
+    }
+
+    private fun selectprofessionfinished(): Boolean{
+        val sharedPref = this.getSharedPreferences("selectprofession", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("Finished",false)
     }
 }
