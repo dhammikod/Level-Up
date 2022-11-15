@@ -38,104 +38,12 @@ class ProfileFragment : Fragment() {
             startActivity(Intent)
         }
 
-        if(!tourguidefinished()) {
-            tourguide()
-        }
-
         return viewbind.root
     }
 
     private fun tourguidefinished(): Boolean{
         val sharedPref = requireActivity().getSharedPreferences("tourguideprofile", Context.MODE_PRIVATE)
         return sharedPref.getBoolean("Finished",false)
-    }
-
-    private fun tourguide(){
-        tourguide1()
-    }
-
-    fun tourguide1(){
-        TapTargetView.showFor(activity,  // `this` is an Activity
-            TapTarget.forView(viewbind.imageView5, "This is Setting button", "you can edit your profile info here") // All options below are optional
-                .tintTarget(false)
-                .outerCircleColor(R.color.holo_purple)
-                .targetRadius(50)
-                .drawShadow(true),  // Specify the target radius (in dp)
-
-            object : TapTargetView.Listener() {
-                override fun onTargetClick(view: TapTargetView) {
-                    super.onTargetClick(view)
-                    tourguide2()
-                }
-                override fun onTargetDismissed(view: TapTargetView?, userInitiated: Boolean) {
-                    super.onTargetDismissed(view, userInitiated)
-                    tourguide2()
-                }
-            })
-    }
-
-    fun tourguide2(){
-        TapTargetView.showFor(activity,  // `this` is an Activity
-            TapTarget.forView(viewbind.imageView13, "This is your profile", "This part contains all of your basic information such as name email and your current user status") // All options below are optional
-                .tintTarget(false)
-                .outerCircleColor(R.color.holo_purple)
-                .targetRadius(50)
-                .drawShadow(true)
-                .targetCircleColor(R.color.white),  // Specify the target radius (in dp)
-
-            object : TapTargetView.Listener() {
-                override fun onTargetClick(view: TapTargetView) {
-                    super.onTargetClick(view)
-                    tourguide3()
-                }
-                override fun onTargetDismissed(view: TapTargetView?, userInitiated: Boolean) {
-                    super.onTargetDismissed(view, userInitiated)
-                    tourguide3()
-                }
-            })
-    }
-
-    fun tourguide3(){
-        TapTargetView.showFor(activity,  // `this` is an Activity
-            TapTarget.forView(viewbind.rvProfession, "This is your interest", "you can only join projects that matches with your profession/interest, you can change them anytime in the settings page") // All options below are optional
-                .tintTarget(false)
-                .outerCircleColor(R.color.holo_purple)
-                .targetRadius(50)
-                .drawShadow(true)
-                .targetCircleColor(R.color.white),  // Specify the target radius (in dp)
-
-            object : TapTargetView.Listener() {
-                override fun onTargetClick(view: TapTargetView) {
-                    super.onTargetClick(view)
-                    tourguide4()
-                }
-                override fun onTargetDismissed(view: TapTargetView?, userInitiated: Boolean) {
-                    super.onTargetDismissed(view, userInitiated)
-                    tourguide4()
-                }
-            })
-    }
-
-    fun tourguide4(){
-        TapTargetView.showFor(activity,  // `this` is an Activity
-            TapTarget.forView(viewbind.textView18, "This is your statistics", "This part contains all of your basic information such as name email and your current user status") // All options below are optional
-                .tintTarget(false)
-                .outerCircleColor(R.color.holo_purple)
-                .drawShadow(true)
-                .targetCircleColor(R.color.white)
-                .transparentTarget(true)
-                .targetRadius(90),  // Specify the target radius (in dp)
-
-            object : TapTargetView.Listener() {
-                override fun onTargetClick(view: TapTargetView) {
-                    super.onTargetClick(view)
-                    tourguide5()
-                }
-                override fun onTargetDismissed(view: TapTargetView?, userInitiated: Boolean) {
-                    super.onTargetDismissed(view, userInitiated)
-                    tourguide5()
-                }
-            })
     }
 
     private fun tourguide5() {

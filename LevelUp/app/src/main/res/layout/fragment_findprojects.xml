@@ -9,6 +9,16 @@
     tools:context=".FindprojectsFragment">
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/searchtour"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="@+id/searchView" />
+
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="192dp"
@@ -73,6 +83,16 @@
             android:layout_height="match_parent"
             android:background="#FFFFFFFF"
             android:backgroundTint="#FFFFFFFF">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rvtour"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="110dp"
+                android:layout_marginEnd="60dp"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/rv_jobsforu"
+                app:layout_constraintTop_toTopOf="@+id/rv_jobsforu" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_jobsforu"
