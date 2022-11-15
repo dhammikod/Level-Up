@@ -19,19 +19,18 @@ class dontdelete : AppCompatActivity() {
         var intent = intent
         var uirr = intent.getStringExtra("data")
 
-        geturiData(Uri.parse(uirr))
+        if (uirr != null) {
+            geturiData(Uri.parse(uirr),uirr)
+        }
 
     }
 
 
 
-    fun geturiData(uri: Uri) {
+    fun geturiData(uri: Uri, uirr: String) {
 
         lateinit var temp: String
         uri.userInfo?.let { Log.d("what", it) }
-
-        Log.d("contenet resolver", contentResolver.toString())
-
 
         val cursor: Cursor? = contentResolver?.query(
             uri, null, null, null, null, null)
@@ -51,7 +50,7 @@ class dontdelete : AppCompatActivity() {
         }
 
         GlobalVar.tempDATAFILE = temp
-        GlobalVar.projects[GlobalVar.projects.size -1].files.add(files(temp,"",""))
+        GlobalVar.projects[GlobalVar.projects.size -1].files.add(files(temp,"","",uirr))
         finish()
     }
 }

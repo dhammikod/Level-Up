@@ -107,10 +107,10 @@ class ProjectActivity : AppCompatActivity() {
         tasks.add(task("Make Project BMC","BMC and Project idea plans","date",0,"Y"))
 
         val files=ArrayList<files>()
-        files.add(files("Source.pdf","","ini adalah file pertama"))
-        files.add(files("Database.pdf","","ini adalah file kedua"))
-        files.add(files("BMC.pdf","","ini adalah file pertama"))
-        files.add(files("Presentation.pptx","","ini adalah file kedua"))
+        files.add(files("Source.pdf","","ini adalah file pertama",""))
+        files.add(files("Database.pdf","","ini adalah file kedua",""))
+        files.add(files("BMC.pdf","","ini adalah file pertama",""))
+        files.add(files("Presentation.pptx","","ini adalah file kedua",""))
         GlobalVar.projects.add(
             projects(0,"Level Up","","LevelUp Project Collaboration and Media Mobile Application","Project is started with an android based application","9 Oktober 2022", roles1,discussions ,tasks,
                 arrayListOf(),0,files)

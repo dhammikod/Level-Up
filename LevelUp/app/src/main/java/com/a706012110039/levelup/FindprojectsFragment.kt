@@ -71,7 +71,7 @@ class FindprojectsFragment : Fragment(), CardListener {
     }
 
     override fun onCardClick(position: Int) {
-        val myIntent = Intent(activity, EnrollProject_Activity::class.java).apply {putExtra("position", position)}
+        val myIntent = Intent(activity, EnrollProject_Activity::class.java)
         startActivity(myIntent)
     }
 
