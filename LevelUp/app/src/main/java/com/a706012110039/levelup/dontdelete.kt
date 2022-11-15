@@ -26,7 +26,6 @@ class dontdelete : AppCompatActivity() {
     }
 
 
-
     fun geturiData(uri: Uri, uirr: String) {
 
         lateinit var temp: String

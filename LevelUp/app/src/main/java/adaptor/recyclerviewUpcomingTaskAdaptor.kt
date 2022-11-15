@@ -10,29 +10,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.a706012110039.levelup.R
 import com.a706012110039.levelup.databinding.CardviewRecentprojectsBinding
+import com.a706012110039.levelup.databinding.CardviewUpcomingtaskBinding
 import model.projects
 
 
-class recyclerviewUpcomingTaskAdaptor(private val dataSet: ArrayList<Int>) :
+class recyclerviewUpcomingTaskAdaptor(private val dataSet: ArrayList<String>) :
         RecyclerView.Adapter<recyclerviewUpcomingTaskAdaptor.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val binding = CardviewRecentprojectsBinding.bind(itemView)
+        val binding = CardviewUpcomingtaskBinding.bind(itemView)
 
-        fun setdata(indexproyek: Int){
-            var data : projects
-            data = GlobalVar.projects[0]
-            for (i in 0..GlobalVar.projects.size-1){
-                if(GlobalVar.projects[i].id == indexproyek){
-                    data = GlobalVar.projects[i]
-                }
-            }
-
-            if(indexproyek == -1){
-                binding.logoprojectimage.setImageResource(R.drawable.ic_baseline_add_24)
-            }else if(!data.logoproject.isNullOrBlank()){
-                binding.logoprojectimage.setImageURI(Uri.parse(data.logoproject))
-            }
+        fun setdata(pos: String){
+            binding.upcomingtaskTextview.text = pos
         }
     }
 
@@ -40,7 +29,7 @@ class recyclerviewUpcomingTaskAdaptor(private val dataSet: ArrayList<Int>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-                .inflate(R.layout.cardview_recentprojects, viewGroup, false)
+                .inflate(R.layout.cardview_upcomingtask, viewGroup, false)
 
         return ViewHolder(view)
     }

@@ -8,6 +8,7 @@ import android.content.Intent
 import android.content.Intent.getIntent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.DocumentsContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -77,7 +78,14 @@ class ProjectFiles : Fragment(), CardListener {
     }
 
     override fun onCardClick(position: Int) {
-        Toast.makeText(activity, "Helena Cantik", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(activity, "adsa", Toast.LENGTH_SHORT).show()
+//        openFile(Uri.parse(GlobalVar.projects[GlobalVar.projects.size - 1].files.get(position).uri))
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupRecycler()
     }
 
     fun buttonOpenFile() {
@@ -87,6 +95,20 @@ class ProjectFiles : Fragment(), CardListener {
         startActivityForResult(chooseFile, 1)
     }
 
+    val PICK_PDF_FILE = 2
+
+
+    fun openFile(pickerInitialUri: Uri) {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            // Optionally, specify a URI for the file that should appear in the
+            // system file picker when it loads.
+
+            putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri)
+        }
+        intent.setType("*/*")
+        startActivityForResult(intent, PICK_PDF_FILE)
+    }
 
     //get file data
     override fun onActivityResult(
@@ -100,8 +122,6 @@ class ProjectFiles : Fragment(), CardListener {
             resultData?.data?.also { uri ->
                 val filePath: String? = uri.path
 
-                Toast.makeText(activity, filePath,
-                    Toast.LENGTH_LONG).show()
 
                 if (filePath != null) {
                     Log.d("Picfile", filePath)
@@ -110,7 +130,7 @@ class ProjectFiles : Fragment(), CardListener {
             }
         }
         val Intentt = Intent(context, dontdelete::class.java).apply {
-            putExtra("data", u)
+            putExtra("data", u.toString())
         }
 
         startActivity(Intentt)
