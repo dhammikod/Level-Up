@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_bottomnavbar_actiity.*
 
 class ProfileFragment : Fragment() {
     private lateinit var viewbind: FragmentProfileBinding
+    private lateinit var professionadaptor: RecyclerViewProfessionAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,7 +72,7 @@ class ProfileFragment : Fragment() {
         viewbind.email.text = GlobalVar.users[GlobalVar.curuser].Email
         viewbind.status.text = GlobalVar.users[GlobalVar.curuser].statuspremium
 
-        val professionadaptor: RecyclerViewProfessionAdapter
+
         professionadaptor = RecyclerViewProfessionAdapter(GlobalVar.users[GlobalVar.curuser].profession)
         viewbind.rvProfession.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.HORIZONTAL, false)
         viewbind.rvProfession.adapter = professionadaptor
@@ -91,5 +92,8 @@ class ProfileFragment : Fragment() {
         viewbind.status.text = GlobalVar.users[GlobalVar.curuser].statuspremium
         viewbind.name.text = GlobalVar.users[GlobalVar.curuser].name
         viewbind.email.text = GlobalVar.users[GlobalVar.curuser].Email
+        professionadaptor = RecyclerViewProfessionAdapter(GlobalVar.users[GlobalVar.curuser].profession)
+        viewbind.rvProfession.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.HORIZONTAL, false)
+        viewbind.rvProfession.adapter = professionadaptor
     }
 }
