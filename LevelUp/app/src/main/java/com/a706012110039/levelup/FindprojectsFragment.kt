@@ -1,8 +1,10 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Interface.CardListener
 import adaptor.RecyclerViewJobsForYouAdapter
 import adaptor.RecyclerViewNewsAdaptor
+import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings.Global
 import android.util.Log
@@ -19,7 +21,7 @@ import model.files
 import model.projects
 import model.task
 
-class FindprojectsFragment : Fragment() {
+class FindprojectsFragment : Fragment(), CardListener {
 
     private lateinit var viewbind: FragmentFindprojectsBinding
     private lateinit var jobsAdaptor: RecyclerViewJobsForYouAdapter
@@ -57,6 +59,18 @@ class FindprojectsFragment : Fragment() {
         jobsAdaptor = RecyclerViewJobsForYouAdapter(GlobalVar.projects)
         viewbind.rvJobsforu.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.VERTICAL, false)
         viewbind.rvJobsforu.adapter = jobsAdaptor
+    }
+
+    private fun listener() {
+        viewbind.addDataFAB.setOnClickListener {
+//            val myIntent = Intent(this, FormActivity::class.java)
+//            startActivity(myIntent)
+        }
+    }
+
+    override fun onCardClick(position: Int) {
+        val myIntent = Intent(activity, EnrollProject_Activity::class.java).apply {putExtra("position", position)}
+        startActivity(myIntent)
     }
 
 

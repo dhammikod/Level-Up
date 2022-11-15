@@ -9,5 +9,6 @@ class GlobalVar {
         val projects = ArrayList<projects>()
         var curuser = 0
         var upcomingTask = ArrayList<String>()
+        var tempDATAFILE = ""
     }
 }
