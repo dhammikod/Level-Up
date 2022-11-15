@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -26,14 +27,14 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
 
         val name: TextView
         val image: ImageView
-
+        val cardview: CardView
 
 
         init {
             // Define click listener for the ViewHolder's View.
             name = view.findViewById(R.id.filenametv)
             image = view.findViewById(R.id.fileiv)
-
+            cardview = view.findViewById(R.id.card)
         }
     }
 
@@ -68,7 +69,9 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
         if (dataSet[position].name.contains("xls"))
             viewHolder.image.setImageResource(R.drawable.spreadsheet)
 
-
+            viewHolder.cardview.setOnClickListener {
+                cardListener.onCardClick(position)
+            }
 
     }
 

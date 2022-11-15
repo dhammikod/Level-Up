@@ -77,7 +77,7 @@ class ProjectFiles : Fragment(), CardListener {
     }
 
     override fun onCardClick(position: Int) {
-        TODO("Not yet implemented")
+        Toast.makeText(activity, "Helena Cantik", Toast.LENGTH_SHORT).show()
     }
 
     fun buttonOpenFile() {
