@@ -48,6 +48,11 @@ class ProfileFragment : Fragment() {
         viewbind.rvProfession.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.HORIZONTAL, false)
         viewbind.rvProfession.adapter = professionadaptor
 
+
+
+        val id: Int = this.getResources().getIdentifier("ic_baseline_person_24", "drawable", context?.getPackageName())
+        viewbind.imageView13.setImageResource(id)
+
         viewbind.textView18.text = GlobalVar.users[GlobalVar.curuser].projectdone.toString()
         viewbind.textView20.text = GlobalVar.users[GlobalVar.curuser].filesuploaded.toString()
         viewbind.textView22.text = GlobalVar.users[GlobalVar.curuser].comments.toString()

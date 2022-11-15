@@ -103,8 +103,8 @@ class ProjectActivity : AppCompatActivity() {
         val date = Date(
         )
         val tasks=ArrayList<task>()
-        tasks.add(task("Make Project Prototype","An accurate prototype to pitch investors",date,0,"N"))
-        tasks.add(task("Make Project BMC","BMC and Project idea plans",date,0,"Y"))
+        tasks.add(task("Make Project Prototype","An accurate prototype to pitch investors","date",0,"N"))
+        tasks.add(task("Make Project BMC","BMC and Project idea plans","date",0,"Y"))
 
         val files=ArrayList<files>()
         files.add(files("Source.pdf","","ini adalah file pertama"))
