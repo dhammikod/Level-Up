@@ -9,7 +9,7 @@
     tools:context=".ProfileFragment" >
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/jobsForYou_titleFragment"
         android:layout_width="169dp"
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
@@ -27,9 +27,9 @@
         android:layout_height="57dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_baseline_settings_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintBottom_toBottomOf="@+id/jobsForYou_titleFragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
+        app:layout_constraintTop_toTopOf="@+id/jobsForYou_titleFragment" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -151,6 +151,16 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_Profession"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/placeholder" />
+
                     <TextView
                         android:id="@+id/placeholder2"
                         android:layout_width="wrap_content"
@@ -161,83 +171,7 @@
                         android:textColor="#000000"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/lightbluebg"
-                        android:backgroundTint="@color/lightbluebg"
-                        app:cardCornerRadius="20dp"
-                        app:layout_constraintStart_toStartOf="@+id/placeholder"
-                        app:layout_constraintTop_toBottomOf="@+id/placeholder">
-
-                        <TextView
-                            android:id="@+id/profession1"
-                            android:layout_width="110dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            android:layout_marginStart="3dp"
-                            android:layout_marginLeft="3dp"
-                            android:layout_marginRight="3dp"
-                            android:layout_marginBottom="3dp"
-                            android:text="UI/UX Developer"
-                            android:textColor="#FFFFFF" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/lightbluebg"
-                        android:backgroundTint="@color/lightbluebg"
-                        app:cardCornerRadius="20dp"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView3"
-                        app:layout_constraintTop_toBottomOf="@+id/placeholder">
-
-                        <TextView
-                            android:id="@+id/profession2"
-                            android:layout_width="110dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            android:layout_marginStart="3dp"
-                            android:layout_marginLeft="3dp"
-                            android:layout_marginRight="3dp"
-                            android:layout_marginBottom="3dp"
-                            android:gravity="center"
-                            android:text="AI Engineer"
-                            android:textColor="#FFFFFF" />
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/lightbluebg"
-                        android:backgroundTint="@color/lightbluebg"
-                        app:cardCornerRadius="20dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/placeholder">
-
-                        <TextView
-                            android:id="@+id/profession3"
-                            android:layout_width="110dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="3dp"
-                            android:layout_marginStart="3dp"
-                            android:layout_marginLeft="3dp"
-                            android:layout_marginRight="3dp"
-                            android:layout_marginBottom="3dp"
-                            android:gravity="center"
-                            android:text="Cyber Expert"
-                            android:textColor="#FFFFFF" />
-                    </androidx.cardview.widget.CardView>
+                        app:layout_constraintTop_toBottomOf="@+id/rv_Profession" />
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardviewstatistics"

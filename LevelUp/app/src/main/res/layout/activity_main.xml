@@ -255,7 +255,7 @@
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="@color/white"
                 android:shadowColor="@color/darkbluebg"
-                android:text="Login"
+                android:text="Sign In"
                 android:textColor="@color/lightbluebg"
                 android:textSize="24sp"
                 app:cornerRadius="10dp"
