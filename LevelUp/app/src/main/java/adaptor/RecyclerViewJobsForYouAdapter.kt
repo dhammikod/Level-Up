@@ -3,7 +3,6 @@ package adaptor
 import Database.GlobalVar
 import android.content.Context
 import android.util.Log
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,6 +49,39 @@ class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.setdata(dataSet[position])
+
+
+    }
+
+    fun getFilter(): Filter {
+        return filter
+    }
+
+    private val filter = object : Filter() {
+        override fun performFiltering(constraint: CharSequence?): FilterResults {
+            val filteredList: ArrayList<CityDataObject> = ArrayList()
+            if (constraint == null || constraint.isEmpty()) {
+                cityDataList.let { filteredList.addAll(it) }
+            } else {
+                val query = constraint.toString().trim().toLowerCase()
+                cityDataList.forEach {
+                    if (it.cityName.toLowerCase(Locale.ROOT).contains(query)) {
+                        filteredList.add(it)
+                    }
+                }
+            }
+            val results = FilterResults()
+            results.values = filteredList
+            return results
+        }
+
+        override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+            if (results?.values is ArrayList<*>) {
+                cityDataList.clear()
+                cityDataList.addAll(results.values as ArrayList<CityDataObject>)
+                notifyDataSetChanged()
+            }
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
