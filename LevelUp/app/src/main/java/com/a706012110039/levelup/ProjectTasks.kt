@@ -110,11 +110,21 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
             var title = tasktitle?.text.toString()
             var desc = taskdesc?.text.toString()
 
-
-
-            var date = LocalDate.parse(dateinput?.text)
+            var date = LocalDate.parse("2022-09-16")
             var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
             var formattedDate = date.format(formatter)
+
+            try {
+                 date = LocalDate.parse(dateinput?.text)
+                 formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
+                 formattedDate = date.format(formatter)
+            }
+            catch (e:java.lang.Exception ){
+                 date = LocalDate.parse("2022-09-16")
+                 formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
+                 formattedDate = date.format(formatter)
+            }
+
 
             if (title != "" && desc != ""){
                 GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(0, task(title,desc, formattedDate,0,"N"))
