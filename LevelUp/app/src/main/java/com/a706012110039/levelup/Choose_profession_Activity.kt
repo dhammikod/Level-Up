@@ -20,27 +20,56 @@ class Choose_profession_Activity : AppCompatActivity(),CardListener {
     private lateinit var professionadaptor: RecyclerviewChooseProfessionAdapter
     private var listprofession = ArrayList<profession>()
     private var selected = ArrayList<String>()
-
+    private var edit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         viewbind = ActivityChooseProfessionBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(viewbind.root)
-
         setdataprofession()
+        getintent()
         viewbind.submit.setOnClickListener {
             if(!selected.isEmpty()){
-                GlobalVar.users[GlobalVar.curuser].profession.clear()
                 GlobalVar.users[GlobalVar.curuser].profession = selected
-                val Intent = Intent(this, BottomnavbarActiity::class.java)
-                startActivity(Intent)
-                chooseprofessionfinished()
+
+                if(!edit){
+                    val Intent = Intent(this, BottomnavbarActiity::class.java)
+                    startActivity(Intent)
+                    chooseprofessionfinished()
+                }
                 finish()
             }else{
                 Toast.makeText(this, "Please select at least 1 profession", Toast.LENGTH_SHORT).show()
             }
         }
     }
+    fun getintent(){
+        edit = intent.getBooleanExtra("edit",false)
+        if(edit){
+            selected = GlobalVar.users[GlobalVar.curuser].profession
+            //clearing dummy data
+            var sum: Int = 0
+            for (i in 0..selected.size-1){
+                if (selected[i].equals("Programmer")) sum +=1
+            }
+
+            for (i in 0..sum){
+                selected.remove("Programmer")
+            }
+
+            //ticking if selected
+            for (i in 0..listprofession.size-1){
+               if(selected.contains(listprofession[i].nama)){
+                   listprofession[i].isselected = true
+               }else{
+                   listprofession[i].isselected = false
+               }
+                professionadaptor.notifyDataSetChanged()
+            }
+        }
+
+    }
+
     private fun chooseprofessionfinished(){
         val sharedPref = this.getSharedPreferences("selectprofession", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()

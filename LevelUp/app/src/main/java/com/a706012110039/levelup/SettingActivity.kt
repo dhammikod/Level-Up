@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.a706012110039.levelup.databinding.ActivitySettingBinding
@@ -16,6 +17,13 @@ class SettingActivity : AppCompatActivity() {
 
         viewbind.savechanges.setOnClickListener {
             checker()
+        }
+
+        viewbind.editprof.setOnClickListener {
+            val intent = Intent(this, Choose_profession_Activity::class.java).apply {
+                putExtra("edit",true)
+            }
+            startActivity(intent)
         }
 
         setContentView(viewbind.root)
