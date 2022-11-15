@@ -21,6 +21,7 @@ import kotlin.collections.ArrayList
 
 class SplashFragment : Fragment() {
     private lateinit var viewbind: FragmentSplashBinding
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -90,7 +91,7 @@ class SplashFragment : Fragment() {
 
 
 
-//        dummydata()
+        dummydata()
         // Inflate the layout for this fragment
         return viewbind.root
     }
@@ -186,9 +187,11 @@ class SplashFragment : Fragment() {
         discussions.add(discussion("Salary","How much is salary",0,replies1))
         discussions.add(discussion("WorkPlan","We need to come up with our work plan, any ideas?",0,replies2))
 
-        var date = LocalDate.parse("2022-12-01")
-        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
-        var formattedDate = date.format(formatter)
+//        var date = LocalDate.parse("2022-12-01")
+//        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
+//        var formattedDate = date.format(formatter)
+        var formattedDate = "01 December 2022"
+
 
         val tasks=ArrayList<task>()
         tasks.add(task("Make Project Prototype","An accurate prototype to pitch investors",formattedDate,0,"N"))
