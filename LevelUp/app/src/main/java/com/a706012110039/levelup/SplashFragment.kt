@@ -144,27 +144,27 @@ class SplashFragment : Fragment() {
         if (GlobalVar.users.size > 0){
             iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
         }
-        GlobalVar.users.add(user(iduser,"Vincent","vincent@email.com","Premium",0,0,0,roles1,projectss,projectss))
+        GlobalVar.users.add(user(iduser,"Vincent","password","vincent@email.com","Premium",0,0,0,roles1,projectss,projectss))
 
         if (GlobalVar.users.size > 0){
             iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
         }
-        GlobalVar.users.add(user(iduser,"Dhammiko","vincent@email.com","Premium",0,0,0,roles2,projectss,projectss))
+        GlobalVar.users.add(user(iduser,"Dhammiko","password","vincent@email.com","Premium",0,0,0,roles2,projectss,projectss))
 
         if (GlobalVar.users.size > 0){
             iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
         }
-        GlobalVar.users.add(user(iduser,"Kevin","vincent@email.com","Premium",0,0,0,roles3,projectss,projectss))
+        GlobalVar.users.add(user(iduser,"Kevin","password","vincent@email.com","Premium",0,0,0,roles3,projectss,projectss))
 
         if (GlobalVar.users.size > 0){
             iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
         }
-        GlobalVar.users.add(user(iduser,"Ileene","vincent@email.com","Premium",0,0,0,roles4,projectss,projectss))
+        GlobalVar.users.add(user(iduser,"Ileene","password","vincent@email.com","Premium",0,0,0,roles4,projectss,projectss))
 
         if (GlobalVar.users.size > 0){
             iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
         }
-        GlobalVar.users.add(user(iduser,"Hagen","vincent@email.com","Premium",0,0,0,roles5,projectss,projectss))
+        GlobalVar.users.add(user(iduser,"Hagen","password","vincent@email.com","Premium",0,0,0,roles5,projectss,projectss))
 
         val replies1=ArrayList<reply>()
         replies1.add(reply(0,"I'm fine with the original contract"))
@@ -197,11 +197,11 @@ class SplashFragment : Fragment() {
             projects(0,"Level Up","","LevelUp Project Collaboration and Media Mobile Application","Project is started with an android based application","9 Oktober 2022", roles1,discussions ,tasks,
                 arrayListOf(),0,files)
         )
-        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser?.add(0)
-        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser?.add(1)
-        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser?.add(2)
-        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser?.add(3)
-        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser?.add(4)
+        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(0)
+        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(1)
+        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(2)
+        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(3)
+        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(4)
 
         Log.d("projects", GlobalVar.projects.toString())
 

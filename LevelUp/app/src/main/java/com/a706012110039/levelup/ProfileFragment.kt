@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import adaptor.RecyclerViewProfessionAdapter
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.a706012110039.levelup.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -37,10 +39,10 @@ class ProfileFragment : Fragment() {
         viewbind.email.text = GlobalVar.users[GlobalVar.curuser].Email
         viewbind.status.text = GlobalVar.users[GlobalVar.curuser].statuspremium
 
-        //recyclerview profession
-        viewbind.profession1.text = GlobalVar.users[GlobalVar.curuser].profession[0]
-        viewbind.profession2.text = GlobalVar.users[GlobalVar.curuser].profession[1]
-        viewbind.profession3.text = GlobalVar.users[GlobalVar.curuser].profession[2]
+        val professionadaptor: RecyclerViewProfessionAdapter
+        professionadaptor = RecyclerViewProfessionAdapter(GlobalVar.users[GlobalVar.curuser].profession)
+        viewbind.rvProfession.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.HORIZONTAL, false)
+        viewbind.rvProfession.adapter = professionadaptor
 
         viewbind.textView18.text = GlobalVar.users[GlobalVar.curuser].projectdone.toString()
         viewbind.textView20.text = GlobalVar.users[GlobalVar.curuser].filesuploaded.toString()
