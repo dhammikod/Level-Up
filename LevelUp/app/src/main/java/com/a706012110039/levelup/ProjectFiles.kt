@@ -7,6 +7,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings.Global
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -43,15 +44,7 @@ class ProjectFiles : Fragment(), CardListener {
         binding.addFileFAB.setOnClickListener {
 
             buttonOpenFile()
-
         }
-
-        var thedata = activity?.intent?.getStringExtra("dataaa")
-        if (thedata != null) {
-            Log.d("AMEN",thedata)
-            GlobalVar.projects[GlobalVar.projects.size -1].files.add(files(thedata,"",""))
-        }
-
     }
 
     override fun onResume() {
