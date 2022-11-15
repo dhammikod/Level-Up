@@ -18,7 +18,7 @@ class ProjectFiles : Fragment(R.layout.fragment_project_files), CardListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        var intent = activity?.intent?.getIntExtra("helena cantik",0)
         setupRecycler()
 
     }
