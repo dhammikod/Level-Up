@@ -140,31 +140,31 @@ class SplashFragment : Fragment() {
         projectss.add(0)
         projectss.add(1)
 
-        var iduser = 0
-        if (GlobalVar.users.size > 0){
-            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-        }
-        GlobalVar.users.add(user(iduser,"Vincent","vincent@email.com","Premium",0,0,0,roles1,projectss,projectss))
-
-        if (GlobalVar.users.size > 0){
-            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-        }
-        GlobalVar.users.add(user(iduser,"Dhammiko","vincent@email.com","Premium",0,0,0,roles2,projectss,projectss))
-
-        if (GlobalVar.users.size > 0){
-            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-        }
-        GlobalVar.users.add(user(iduser,"Kevin","vincent@email.com","Premium",0,0,0,roles3,projectss,projectss))
-
-        if (GlobalVar.users.size > 0){
-            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-        }
-        GlobalVar.users.add(user(iduser,"Ileene","vincent@email.com","Premium",0,0,0,roles4,projectss,projectss))
-
-        if (GlobalVar.users.size > 0){
-            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-        }
-        GlobalVar.users.add(user(iduser,"Hagen","vincent@email.com","Premium",0,0,0,roles5,projectss,projectss))
+//        var iduser = 0
+//        if (GlobalVar.users.size > 0){
+//            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//        }
+//        GlobalVar.users.add(user(iduser,"Vincent","vincent@email.com","Premium",0,0,0,roles1,projectss,projectss))
+//
+//        if (GlobalVar.users.size > 0){
+//            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//        }
+//        GlobalVar.users.add(user(iduser,"Dhammiko","vincent@email.com","Premium",0,0,0,roles2,projectss,projectss))
+//
+//        if (GlobalVar.users.size > 0){
+//            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//        }
+//        GlobalVar.users.add(user(iduser,"Kevin","vincent@email.com","Premium",0,0,0,roles3,projectss,projectss))
+//
+//        if (GlobalVar.users.size > 0){
+//            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//        }
+//        GlobalVar.users.add(user(iduser,"Ileene","vincent@email.com","Premium",0,0,0,roles4,projectss,projectss))
+//
+//        if (GlobalVar.users.size > 0){
+//            iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//        }
+//        GlobalVar.users.add(user(iduser,"Hagen","vincent@email.com","Premium",0,0,0,roles5,projectss,projectss))
 
         val replies1=ArrayList<reply>()
         replies1.add(reply(0,"I'm fine with the original contract"))
