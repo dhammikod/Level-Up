@@ -40,6 +40,8 @@ class ProjectOverview : Fragment() {
         binding.projectnotestv.text= GlobalVar.projects[GlobalVar.projects.size-1].notes
         binding.projectstarttv.text= GlobalVar.projects[GlobalVar.projects.size-1].startdate
         binding.projectoverviewtv.text= GlobalVar.projects[GlobalVar.projects.size-1].overview
+        val id: Int = this.getResources().getIdentifier(GlobalVar.projects[GlobalVar.projects.size-1].logoproject, "drawable", context?.getPackageName())
+        binding.projectimage.setImageResource(id)
 //        binding.projectimage.setImageURI(GlobalVar.projects[GlobalVar.projects.size-1].logoproject.toUri())
     }
 

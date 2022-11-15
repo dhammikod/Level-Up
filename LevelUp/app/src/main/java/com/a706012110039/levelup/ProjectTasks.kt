@@ -2,22 +2,23 @@ package com.a706012110039.levelup
 
 import Database.GlobalVar
 import Interface.CardListener
-import adaptor.RecyclerViewProjectDsicussionsAdapter
 import adaptor.RecylcerViewProjectTasksAdapter
+import android.os.Build
 import android.os.Bundle
-import android.text.TextUtils.replace
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import com.a706012110039.levelup.databinding.ActivityProjectBinding
-import com.a706012110039.levelup.databinding.FragmentProfileBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.fragment_project_discussion.*
 import kotlinx.android.synthetic.main.fragment_project_tasks.*
+import kotlinx.android.synthetic.main.input_task_modal.*
 import model.task
+import java.util.*
+
 
 class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener {
 
@@ -72,12 +73,45 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener {
         val dialog = BottomSheetDialog(requireContext())
         dialog.setContentView(R.layout.input_task_modal)
         dialog.show()
+
+
+        val addbutton = dialog.findViewById<Button>(R.id.addtaskb)
+        val tasktitle = dialog.findViewById<TextInputEditText>(R.id.tasktitleinputtext)
+        val taskdesc = dialog.findViewById<TextInputEditText>(R.id.taskdescinputtext)
+        addbutton?.setOnClickListener(){
+            var title = tasktitle?.text.toString()
+            var desc = taskdesc?.text.toString()
+            var date = Date(
+            )
+            if (title != "" && desc != ""){
+                GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(0, task(title,desc, date,0,"N"))
+            }
+
+
+            else{
+
+            }
+
+
+
+            dialog.dismiss()
+            setupRecycler()
+        }
     }
     override fun onCardClick(position: Int) {
         onResume()
         setupRecycler()
-    }
+//        val ft: FragmentTransaction = this.beginTransaction()
+//        if (Build.VERSION.SDK_INT >= 26) {
+//            ft.setReorderingAllowed(false)
+//        }
+//        ft.detach(this).attach(this).commit()
 
+        this.requireFragmentManager().beginTransaction().apply {
+            replace(R.id.frameproject, ProjectTasks())
+            commit()
+        }
+    }
 
 }
 

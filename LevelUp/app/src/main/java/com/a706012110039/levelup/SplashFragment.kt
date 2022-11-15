@@ -194,7 +194,7 @@ class SplashFragment : Fragment() {
         files.add(files("BMC.pdf","","ini adalah file pertama"))
         files.add(files("Presentation.pptx","","ini adalah file kedua"))
         GlobalVar.projects.add(
-            projects(0,"Level Up","","LevelUp Project Collaboration and Media Mobile Application","Project is started with an android based application","9 Oktober 2022", roles1,discussions ,tasks,
+            projects(0,"Level Up","logolvlup","LevelUp Project Collaboration and Media Mobile Application","Project is started with an android based application","9 Oktober 2022", roles1,discussions ,tasks,
                 arrayListOf(),0,files)
         )
         GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(0)

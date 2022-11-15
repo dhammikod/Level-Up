@@ -4,6 +4,7 @@ import Database.GlobalVar
 import adaptor.RecyclerViewProfessionAdapter
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract.Profile
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.a706012110039.levelup.databinding.FragmentProfileBinding
+import kotlinx.android.synthetic.main.activity_bottomnavbar_actiity.*
 
 class ProfileFragment : Fragment() {
     private lateinit var viewbind: FragmentProfileBinding
@@ -31,6 +33,8 @@ class ProfileFragment : Fragment() {
             startActivity(Intent)
         }
         return viewbind.root
+
+
     }
 
     fun setupdata(){
@@ -47,5 +51,10 @@ class ProfileFragment : Fragment() {
         viewbind.textView18.text = GlobalVar.users[GlobalVar.curuser].projectdone.toString()
         viewbind.textView20.text = GlobalVar.users[GlobalVar.curuser].filesuploaded.toString()
         viewbind.textView22.text = GlobalVar.users[GlobalVar.curuser].comments.toString()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewbind.status.text = GlobalVar.users[GlobalVar.curuser].statuspremium
     }
 }
