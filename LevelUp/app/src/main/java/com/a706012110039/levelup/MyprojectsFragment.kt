@@ -1,5 +1,10 @@
 package com.a706012110039.levelup
 
+import Database.GlobalVar
+import Interface.CardListener
+import adaptor.RecyclerViewJobsForYouAdapter
+import adaptor.RecyclerView_Projects_OnGoing
+import adaptor.RecyclerView_Projects_Past
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
@@ -7,44 +12,53 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.a706012110039.levelup.databinding.FragmentMyprojectsBinding
 
-class MyprojectsFragment : Fragment() {
+class MyprojectsFragment : Fragment(), CardListener {
     private lateinit var viewbind: FragmentMyprojectsBinding
+    private lateinit var onGoingAdapter: RecyclerView_Projects_OnGoing
+    private lateinit var pastAdapter: RecyclerView_Projects_Past
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         viewbind = FragmentMyprojectsBinding.inflate(layoutInflater)
-        viewbind.cvOngoingdata.isVisible = false
+        viewbind.rvProjectsPast.isVisible = true
+        viewbind.rvProjectsOnGoing.isVisible = false
         switcher()
+        setuprv()
 
-        viewbind.cvpastproject1.setOnClickListener(){
 
-            val myIntent = Intent(context,ProjectActivity::class.java).apply{
-//                putExtra("position",position)
+        viewbind.searchViewMyProjects.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                onGoingAdapter?.getFilter()?.filter(query)
+                pastAdapter?.getFilter()?.filter(query)
+                return true
             }
-            startActivity(myIntent)
-        }
 
-        viewbind.cardView8.setOnClickListener(){
-
-            val myIntent = Intent(context,ProjectActivity::class.java).apply{
-//                putExtra("position",position)
+            override fun onQueryTextChange(newText: String?): Boolean {
+                onGoingAdapter?.getFilter()?.filter(newText);
+                pastAdapter?.getFilter()?.filter(newText);
+                return true
             }
-            startActivity(myIntent)
-        }
 
-        viewbind.seedetails.setOnClickListener(){
-
-            val myIntent = Intent(context,ProjectActivity::class.java).apply{
-//                putExtra("position",position)
-            }
-            startActivity(myIntent)
-        }
+        })
         return viewbind.root
+    }
+
+    fun setuprv(){
+
+        onGoingAdapter = RecyclerView_Projects_OnGoing(GlobalVar.projects, this)
+        viewbind.rvProjectsOnGoing.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.VERTICAL, false)
+        viewbind.rvProjectsOnGoing.adapter = onGoingAdapter
+
+        pastAdapter = RecyclerView_Projects_Past(GlobalVar.projects, this)
+        viewbind.rvProjectsPast.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.VERTICAL, false)
+        viewbind.rvProjectsPast.adapter = pastAdapter
     }
 
 
@@ -53,22 +67,25 @@ class MyprojectsFragment : Fragment() {
     fun switcher(){
         viewbind.cvOngoing.setOnClickListener {
             viewbind.cvOngoing.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.bgselected))
-            viewbind.textView27.setTextColor(resources.getColor(R.color.colorselected))
+            viewbind.onGoingTextView.setTextColor(resources.getColor(R.color.colorselected))
             viewbind.cvPast.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.bgnotselected))
-            viewbind.textView25.setTextColor(resources.getColor(R.color.colornotselected))
-            viewbind.cvOngoingdata.isVisible = true
-            viewbind.cvpastproject1.isVisible = false
-            viewbind.cardView8.isVisible = false
+            viewbind.pastTextView.setTextColor(resources.getColor(R.color.colornotselected))
+            viewbind.rvProjectsOnGoing.isVisible = true
+            viewbind.rvProjectsPast.isVisible = false
         }
 
         viewbind.cvPast.setOnClickListener {
             viewbind.cvPast.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.bgselected))
-            viewbind.textView25.setTextColor(resources.getColor(R.color.colorselected))
+            viewbind.pastTextView.setTextColor(resources.getColor(R.color.colorselected))
             viewbind.cvOngoing.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.bgnotselected))
-            viewbind.textView27.setTextColor(resources.getColor(R.color.colornotselected))
-            viewbind.cvOngoingdata.isVisible = false
-            viewbind.cvpastproject1.isVisible = true
-            viewbind.cardView8.isVisible = true
+            viewbind.onGoingTextView.setTextColor(resources.getColor(R.color.colornotselected))
+            viewbind.rvProjectsPast.isVisible = true
+            viewbind.rvProjectsOnGoing.isVisible = false
         }
+    }
+
+    override fun onCardClick(position: Int) {
+        val myIntent = Intent(context, ProjectActivity::class.java).apply { putExtra("position", position) }
+        startActivity(myIntent)
     }
 }

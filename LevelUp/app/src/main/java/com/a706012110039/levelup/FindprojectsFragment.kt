@@ -40,7 +40,7 @@ class FindprojectsFragment : Fragment(), CardListener {
 
 
 
-        viewbind.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        viewbind.searchViewJobsForYou.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 jobsAdaptor?.getFilter()?.filter(query)
                 return true

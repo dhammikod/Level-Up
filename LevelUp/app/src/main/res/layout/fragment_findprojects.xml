@@ -15,12 +15,12 @@
         android:layout_height="1dp"
         android:layout_marginEnd="24dp"
         app:cardBackgroundColor="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
-        app:layout_constraintEnd_toEndOf="@+id/searchView"
-        app:layout_constraintTop_toTopOf="@+id/searchView" />
+        app:layout_constraintBottom_toBottomOf="@+id/searchView_myProjects"
+        app:layout_constraintEnd_toEndOf="@+id/searchView_myProjects"
+        app:layout_constraintTop_toTopOf="@+id/searchView_myProjects" />
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/searchView_jobsForYou"
         android:layout_width="192dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -42,15 +42,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:minHeight="48dp"
         android:text="Jobs For You"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textIsSelectable="false"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintBottom_toBottomOf="@id/searchView_jobsForYou"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/searchView" />
+        app:layout_constraintTop_toTopOf="@id/searchView_jobsForYou" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addDataFAB"
@@ -71,7 +73,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="-72dp"
+        android:layout_marginBottom="-60dp"
+        app:cardBackgroundColor="#ffffffff"
         app:cardCornerRadius="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

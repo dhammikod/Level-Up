@@ -226,9 +226,9 @@
                                 android:layout_marginTop="8dp"
                                 android:text="Project (s)"
                                 android:textColor="#FFFFFF"
-                                app:layout_constraintEnd_toEndOf="@+id/textView18"
-                                app:layout_constraintStart_toStartOf="@+id/textView18"
-                                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+                                app:layout_constraintEnd_toEndOf="@id/textView18"
+                                app:layout_constraintStart_toStartOf="@id/textView18"
+                                app:layout_constraintTop_toBottomOf="@id/textView18" />
 
                             <androidx.cardview.widget.CardView
                                 android:id="@+id/pembatas2"
