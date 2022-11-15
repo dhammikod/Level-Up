@@ -1,6 +1,7 @@
 package adaptor
 
 import Database.GlobalVar
+import android.content.Context
 import android.icu.number.NumberFormatter.with
 import android.icu.number.NumberRangeFormatter.with
 import android.net.Uri
@@ -31,6 +32,10 @@ class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<Int>) :
                 binding.logoprojectimage.setImageResource(R.drawable.ic_baseline_add_black)
             }else if(!data.logoproject.isNullOrBlank()){
                 binding.logoprojectimage.setImageURI(Uri.parse(data.logoproject))
+                val context: Context = binding.logoprojectimage.getContext()
+                val id: Int = context.getResources()
+                    .getIdentifier(data.logoproject, "drawable", context.getPackageName())
+                binding.logoprojectimage.setImageResource(id)
             }
         }
     }
