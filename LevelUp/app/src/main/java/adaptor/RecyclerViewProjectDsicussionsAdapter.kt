@@ -33,6 +33,7 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
             val replybutton:Button
             val img1: ImageView
             val img2: ImageView
+            val replytext: TextView
 
             init {
                 // Define click listener for the ViewHolder's View.
@@ -44,6 +45,7 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
                 replybutton =  view.findViewById(R.id.replydiscussionbutton)
                 img1 = view.findViewById(R.id.imageView10)
                 img2 = view.findViewById(R.id.imageView11)
+                replytext = view.findViewById(R.id.textView15)
             }
         }
 
@@ -77,6 +79,7 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
                 viewHolder.img2.isVisible = false
             }
              else if(dataSet[position].replies.size<1) {
+                 viewHolder.replytext.isVisible=false
                 viewHolder.reply2.isVisible = false
                 viewHolder.reply1.isVisible = false
                 viewHolder.img1.isVisible = false
