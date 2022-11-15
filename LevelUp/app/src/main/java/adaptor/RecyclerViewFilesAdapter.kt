@@ -22,10 +22,11 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, cardListener: CardListener) : RecyclerView.ViewHolder(view) {
 
         val name: TextView
         val image: ImageView
+
 
 
         init {
@@ -42,7 +43,7 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.cardview_files, viewGroup, false)
 
-        return ViewHolder(view)
+        return ViewHolder(view,cardListener)
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -54,6 +55,8 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
 
         if (dataSet[position].name != null)
             viewHolder.image.setImageResource(R.drawable.job_default)
+        if (dataSet[position].name.contains("doc"))
+            viewHolder.image.setImageResource(R.drawable.word)
 
         if (dataSet[position].name.contains("pptx"))
             viewHolder.image.setImageResource(R.drawable.ppt)
@@ -61,8 +64,6 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
         if (dataSet[position].name.contains("pdf"))
             viewHolder.image.setImageResource(R.drawable.pdf)
 
-        if (dataSet[position].name.contains("docs"))
-            viewHolder.image.setImageResource(R.drawable.word)
 
         if (dataSet[position].name.contains("xls"))
             viewHolder.image.setImageResource(R.drawable.spreadsheet)

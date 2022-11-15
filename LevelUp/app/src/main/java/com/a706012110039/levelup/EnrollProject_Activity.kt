@@ -33,14 +33,15 @@ class EnrollProject_Activity : AppCompatActivity() {
     private fun getintent() {
         position = intent.getIntExtra("position", -1)
         val project = GlobalVar.projects[position]
-        if (project.logoproject.isNotEmpty()) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                baseContext.contentResolver.takePersistableUriPermission(
-                    Uri.parse(GlobalVar.projects[position].logoproject),
-                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-                )
-            }
-        }
+        Uri.parse(GlobalVar.projects[position].logoproject)
+//        if (project.logoproject.isNotEmpty()) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//                baseContext.contentResolver.takePersistableUriPermission(
+//                    Uri.parse(GlobalVar.projects[position].logoproject),
+//                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+//                )
+//            }
+//        }
         open(project)
     }
 

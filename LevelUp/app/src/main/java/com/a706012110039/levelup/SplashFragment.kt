@@ -21,6 +21,7 @@ import kotlin.collections.ArrayList
 
 class SplashFragment : Fragment() {
     private lateinit var viewbind: FragmentSplashBinding
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,54 +32,54 @@ class SplashFragment : Fragment() {
 
 
         viewbind.imageView.animate().setDuration(3000).alpha(1f).withEndAction{
-            var iduser = 0
-            if (GlobalVar.users.size > 0){
-                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-            }
-            GlobalVar.users.add(
-                user(iduser,"quantum","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-                    arrayListOf(), arrayListOf())
-            )
-
-            if (GlobalVar.users.size > 0){
-                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-            }
-            GlobalVar.users.add(
-                user(1,"1","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-                    arrayListOf(), arrayListOf())
-            )
-
-            if (GlobalVar.users.size > 0){
-                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-            }
-            GlobalVar.users.add(
-                user(2,"2","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-                    arrayListOf(), arrayListOf())
-            )
-
-            if (GlobalVar.users.size > 0){
-                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-            }
-            GlobalVar.users.add(
-                user(3,"3","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-                    arrayListOf(), arrayListOf())
-            )
-
-            if (GlobalVar.users.size > 0){
-                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-            }
-            GlobalVar.users.add(
-                user(4,"4","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-                    arrayListOf(), arrayListOf())
-            )
-
-            if (GlobalVar.users.size > 0){
-                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
-            }
-            GlobalVar.users.add(
-                user(5,"5","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-                    arrayListOf(), arrayListOf())
-            )
+//            var iduser = 0
+//            if (GlobalVar.users.size > 0){
+//                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//            }
+//            GlobalVar.users.add(
+//                user(iduser,"quantum","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//                    arrayListOf(), arrayListOf())
+//            )
+//
+//            if (GlobalVar.users.size > 0){
+//                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//            }
+//            GlobalVar.users.add(
+//                user(1,"1","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//                    arrayListOf(), arrayListOf())
+//            )
+//
+//            if (GlobalVar.users.size > 0){
+//                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//            }
+//            GlobalVar.users.add(
+//                user(2,"2","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//                    arrayListOf(), arrayListOf())
+//            )
+//
+//            if (GlobalVar.users.size > 0){
+//                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//            }
+//            GlobalVar.users.add(
+//                user(3,"3","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//                    arrayListOf(), arrayListOf())
+//            )
+//
+//            if (GlobalVar.users.size > 0){
+//                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//            }
+//            GlobalVar.users.add(
+//                user(4,"4","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//                    arrayListOf(), arrayListOf())
+//            )
+//
+//            if (GlobalVar.users.size > 0){
+//                iduser = GlobalVar.users[GlobalVar.users.size-1].id + 1
+//            }
+//            GlobalVar.users.add(
+//                user(5,"5","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//                    arrayListOf(), arrayListOf())
+//            )
 
             if(onboardingfinished()){
                 findNavController().navigate(R.id.action_splashFragment_to_loginActivity)
@@ -186,9 +187,11 @@ class SplashFragment : Fragment() {
         discussions.add(discussion("Salary","How much is salary",0,replies1))
         discussions.add(discussion("WorkPlan","We need to come up with our work plan, any ideas?",0,replies2))
 
-        var date = LocalDate.parse("2022-12-01")
-        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
-        var formattedDate = date.format(formatter)
+//        var date = LocalDate.parse("2022-12-01")
+//        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
+//        var formattedDate = date.format(formatter)
+        var formattedDate = "01 December 2022"
+
 
         val tasks=ArrayList<task>()
         tasks.add(task("Make Project Prototype","An accurate prototype to pitch investors",formattedDate,0,"N"))
@@ -199,10 +202,10 @@ class SplashFragment : Fragment() {
 
 
         val files=ArrayList<files>()
-        files.add(files("Source.pdf","","ini adalah file pertama"))
-        files.add(files("Database.pdf","","ini adalah file kedua"))
-        files.add(files("BMC.pdf","","ini adalah file pertama"))
-        files.add(files("Presentation.pptx","","ini adalah file kedua"))
+        files.add(files("Source.pdf","","ini adalah file pertama",""))
+        files.add(files("Database.pdf","","ini adalah file kedua",""))
+        files.add(files("BMC.pdf","","ini adalah file pertama",""))
+        files.add(files("Presentation.pptx","","ini adalah file kedua",""))
         GlobalVar.projects.add(
             projects(0,"Level Up","logolvlup","LevelUp Project Collaboration and Media Mobile Application","Project is started with an android based application","9 Oktober 2022", roles1,discussions ,tasks,
                 arrayListOf(),0,files)

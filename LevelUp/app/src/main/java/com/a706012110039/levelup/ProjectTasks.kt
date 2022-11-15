@@ -104,15 +104,15 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
         val tasktitle = dialog.findViewById<TextInputEditText>(R.id.tasktitleinputtext)
         val taskdesc = dialog.findViewById<TextInputEditText>(R.id.taskdescinputtext)
         val back = dialog.findViewById<ImageView>(R.id.imageView25)
-        val pdate = dialog.findViewById<Button>(R.id.pickdateb)
+        val dateinput = dialog.findViewById<TextInputEditText>(R.id.dateinputtext)
 
         addbutton?.setOnClickListener(){
             var title = tasktitle?.text.toString()
             var desc = taskdesc?.text.toString()
 
 
-//            var date = LocalDate.parse("$sday-$smonth-$syear")
-            var date = LocalDate.parse("2022-11-29")
+
+            var date = LocalDate.parse(dateinput?.text)
             var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
             var formattedDate = date.format(formatter)
 
@@ -125,12 +125,7 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
 
             }
 
-            pdate?.setOnClickListener(){
-                getDateCalendar()
-                DatePickerDialog(requireContext(),this,year,month,day).show()
 
-
-            }
 
 
             dialog.dismiss()
