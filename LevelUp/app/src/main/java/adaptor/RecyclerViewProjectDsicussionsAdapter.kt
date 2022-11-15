@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
@@ -30,6 +31,8 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
             val reply1:TextView
             val reply2:TextView
             val replybutton:Button
+            val img1: ImageView
+            val img2: ImageView
 
             init {
                 // Define click listener for the ViewHolder's View.
@@ -39,6 +42,8 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
                 reply1 = view.findViewById(R.id.replyincardtv1)
                 reply2 = view.findViewById(R.id.replyincardtv2)
                 replybutton =  view.findViewById(R.id.replydiscussionbutton)
+                img1 = view.findViewById(R.id.imageView10)
+                img2 = view.findViewById(R.id.imageView11)
             }
         }
 
@@ -63,15 +68,19 @@ class RecyclerViewProjectDsicussionsAdapter (private val dataSet: ArrayList<disc
             if (dataSet[position].replies.size>1){
                 viewHolder.reply1.text = dataSet[position].replies[0].message
                 viewHolder.reply2.text = dataSet[position].replies[1].message
+
             }
 
             else if (dataSet[position].replies.size==1){
-            viewHolder.reply1.text = dataSet[position].replies[0].toString()
+            viewHolder.reply1.text = dataSet[position].replies[0].message
                 viewHolder.reply2.isVisible = false
+                viewHolder.img2.isVisible = false
             }
              else if(dataSet[position].replies.size<1) {
                 viewHolder.reply2.isVisible = false
                 viewHolder.reply1.isVisible = false
+                viewHolder.img1.isVisible = false
+                viewHolder.img2.isVisible = false
             }
 
         viewHolder.replybutton.setOnClickListener(){

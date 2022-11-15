@@ -64,6 +64,19 @@ class RecylcerViewProjectTasksAdapter (private val data: ArrayList<task>, val ca
         viewHolder.desc.text= data[position].description
         viewHolder.duedate.text=data[position].duedate.toString()
 
+
+        viewHolder.status.setOnClickListener(){
+            cardListener.onCardClick(position)
+            if (viewHolder.status.isChecked)
+            {
+                data[position].status ="Y"
+            }
+
+            else  {
+                data[position].status ="N"
+            }
+        }
+
         if (data[position].status =="Y"){
             viewHolder.status.isChecked = true}
 

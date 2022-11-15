@@ -14,6 +14,7 @@
         android:layout_marginBottom="8dp"
         android:backgroundTint="#FFFFFF"
         android:elevation="0dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,9 +27,9 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView3"
                 android:layout_width="110dp"
-                android:layout_height="150dp"
+                android:layout_height="125dp"
                 android:layout_marginStart="1dp"
-                android:backgroundTint="@color/material_dynamic_neutral80"
+                android:backgroundTint="#ECECEC"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -53,6 +54,7 @@
                 android:id="@+id/filenametv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="TextView"
                 android:textAlignment="center"
                 android:textSize="18sp"

@@ -13,9 +13,11 @@ import kotlinx.android.synthetic.main.activity_reply_discussion.*
 import kotlinx.android.synthetic.main.cardview_discussions.*
 import kotlinx.android.synthetic.main.fragment_project_discussion.*
 import kotlinx.android.synthetic.main.fragment_project_tasks.*
+import model.reply
 
 class ReplyDiscussion : AppCompatActivity(), CardListener {
-    private var adapter= RecyclerViewReplyDiscussionAdapter(GlobalVar.projects[GlobalVar.projects.size-1].discussion[0].replies,this)
+    private  var position=0
+    private var adapter= RecyclerViewReplyDiscussionAdapter(GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].replies,this)
     private lateinit var binding:ActivityReplyDiscussionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +29,7 @@ class ReplyDiscussion : AppCompatActivity(), CardListener {
     }
 
     private fun GetIntent(){
-        val position = intent.getIntExtra("position",0)
+         position = intent.getIntExtra("position",0)
         binding.discussiontitletva.text = GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].title
         binding.disucussionmakertv.text = GlobalVar.users[GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].creator].name
         binding.discussionrepdesctv.text = GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].description
@@ -37,9 +39,29 @@ class ReplyDiscussion : AppCompatActivity(), CardListener {
             this.finish()
         }
 
+        binding.sendreply.setOnClickListener(){
+
+          var replymessage = replyinputtext.text.toString()
+
+            if (replymessage!= "") {
+                GlobalVar.projects[GlobalVar.projects.size - 1].discussion[position].replies.add(
+                    reply(0, replymessage)
+                )
+                adapter.notifyDataSetChanged()
+                super.onResume()
+            }
+            else{}
+
+
+
+
+            }
+
+
+
     }
     fun setupRecycler(){
-
+        adapter= RecyclerViewReplyDiscussionAdapter(GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].replies,this)
        val layoutManager = GridLayoutManager(baseContext, 1)
         repliesrv.layoutManager = layoutManager
         repliesrv.adapter = adapter

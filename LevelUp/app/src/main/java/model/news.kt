@@ -1,7 +1,7 @@
 package model
 
 data class news(
-    val title: String,
-    val publisher: String,
-    val headerimage: String,
+    var title: String,
+    var publisher: String,
+    var headerimage: String,
 )

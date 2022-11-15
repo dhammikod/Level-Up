@@ -7,7 +7,7 @@ data class task(
     val description: String,
     val duedate: Date,
     val pic: Int,
-    val status: String
+    var status: String
 
 
 ){

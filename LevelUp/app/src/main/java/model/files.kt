@@ -1,8 +1,8 @@
 package model
 
 data class files(
-    val name:String,
-    val imageuri: String,
-    val text:String
+    var name:String,
+    var imageuri: String,
+    var text:String
 ) {
 }

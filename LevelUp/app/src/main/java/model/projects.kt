@@ -1,16 +1,16 @@
 package model
 
 data class projects(
-    val id:Int,
-    val title: String,
-    val logoproject: String,
-    val overview: String,
-    val notes: String?,
-    val startdate: String,
-    val neededprofession: ArrayList<String>,
-    val discussion: ArrayList<discussion>,
-    val tasks:ArrayList<task>,
-    val enrolleduser:ArrayList<Int>,
-    val creator: Int,
-    val files: ArrayList<files>
+    var id:Int,
+    var title: String,
+    var logoproject: String,
+    var overview: String,
+    var notes: String?,
+    var startdate: String,
+    var neededprofession: ArrayList<String>,
+    var discussion: ArrayList<discussion>,
+    var tasks:ArrayList<task>,
+    var enrolleduser:ArrayList<Int>,
+    var creator: Int,
+    var files: ArrayList<files>
 )

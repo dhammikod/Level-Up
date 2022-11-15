@@ -1,18 +1,17 @@
 package adaptor
 
-import Database.GlobalVar
 import Interface.CardListener
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.net.toUri
-import androidx.core.view.isVisible
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.a706012110039.levelup.R
-import model.discussion
 import model.files
 
 
@@ -52,9 +51,21 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.name.text = dataSet[position].name
-//        viewHolder.image.setImageURI(dataSet[position].imageuri.toUri())
+
+        if (dataSet[position].name.contains("pptx"))
+        viewHolder.image.setImageResource(R.drawable.ppt)
+
+        if (dataSet[position].name.contains("pdf"))
+            viewHolder.image.setImageResource(R.drawable.pdf)
+
+        if (dataSet[position].name.contains("docs"))
+            viewHolder.image.setImageResource(R.drawable.word)
+
+        if (dataSet[position].name.contains("xls"))
+            viewHolder.image.setImageResource(R.drawable.spreadsheet)
 
     }
+
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
