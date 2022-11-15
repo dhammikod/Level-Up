@@ -75,13 +75,15 @@ class HomeFragment : Fragment() {
             tempINT++
         }
 
+        Log.d("here",temp.toString())
+
             val upcomingAdaptor: recyclerviewUpcomingTaskAdaptor
             upcomingAdaptor = recyclerviewUpcomingTaskAdaptor(temp)
-            viewbind.RVrecentprojects.layoutManager =
+            viewbind.UpcomingtaskRV.layoutManager =
                 LinearLayoutManager(requireActivity().baseContext,
-                    LinearLayoutManager.HORIZONTAL,
+                    LinearLayoutManager.VERTICAL,
                     false)
-            viewbind.RVrecentprojects.adapter = upcomingAdaptor
+            viewbind.UpcomingtaskRV.adapter = upcomingAdaptor
 
     }
 

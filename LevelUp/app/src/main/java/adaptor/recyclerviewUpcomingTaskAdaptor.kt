@@ -29,7 +29,7 @@ class recyclerviewUpcomingTaskAdaptor(private val dataSet: ArrayList<String>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-                .inflate(R.layout.cardview_recentprojects, viewGroup, false)
+                .inflate(R.layout.cardview_upcomingtask, viewGroup, false)
 
         return ViewHolder(view)
     }
