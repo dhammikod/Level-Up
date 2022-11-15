@@ -175,12 +175,12 @@ class SplashFragment : Fragment() {
         GlobalVar.users.add(user(iduser,"Hagen","password","vincent@email.com","Premium",0,0,0,roles5,projectss,projectss))
 
         val replies1=ArrayList<reply>()
-        replies1.add(reply(0,"I'm fine with the original contract"))
-        replies1.add(reply(0,"I think I'll do finw with the city's minumum wage"))
+        replies1.add(reply(1,"I'm fine with the original contract"))
+        replies1.add(reply(1,"I think I'll do finw with the city's minumum wage"))
 
         val replies2=ArrayList<reply>()
-        replies2.add(reply(0,"Let's start a meeting tomorrow"))
-        replies2.add(reply(0,"I have an idea, I'll tell you guys about it tonight"))
+        replies2.add(reply(1,"Let's start a meeting tomorrow"))
+        replies2.add(reply(1,"I have an idea, I'll tell you guys about it tonight"))
 
 
         val discussions=ArrayList<discussion>()
