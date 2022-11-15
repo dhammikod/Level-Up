@@ -10,10 +10,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.a706012110039.levelup.R
 import com.a706012110039.levelup.databinding.CardviewJobsforyouBinding
 import model.projects
+import java.util.*
+import kotlin.collections.ArrayList
+import android.widget.Filter
 
 
 class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>) :
     RecyclerView.Adapter<RecyclerViewJobsForYouAdapter.ViewHolder>() {
+    val initialProjectsDataList = ArrayList<projects>().apply {
+        dataSet?.let { addAll(it) }
+    }
 
     /**
      * Provide a reference to the type of views that you are using
@@ -53,19 +59,19 @@ class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>) :
 
     }
 
-    fun getFilter(): Filter {
+    fun getFilter():  Filter {
         return filter
     }
 
     private val filter = object : Filter() {
         override fun performFiltering(constraint: CharSequence?): FilterResults {
-            val filteredList: ArrayList<CityDataObject> = ArrayList()
+            val filteredList: ArrayList<projects> = ArrayList()
             if (constraint == null || constraint.isEmpty()) {
-                cityDataList.let { filteredList.addAll(it) }
+                initialProjectsDataList.let { filteredList.addAll(it) }
             } else {
-                val query = constraint.toString().trim().toLowerCase()
-                cityDataList.forEach {
-                    if (it.cityName.toLowerCase(Locale.ROOT).contains(query)) {
+                val query = constraint.toString().trim().lowercase(Locale.ROOT)
+                initialProjectsDataList.forEach {
+                    if (it.title.lowercase(Locale.ROOT).contains(query)) {
                         filteredList.add(it)
                     }
                 }
@@ -77,8 +83,8 @@ class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>) :
 
         override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
             if (results?.values is ArrayList<*>) {
-                cityDataList.clear()
-                cityDataList.addAll(results.values as ArrayList<CityDataObject>)
+                dataSet.clear()
+                dataSet.addAll(results.values as ArrayList<projects>)
                 notifyDataSetChanged()
             }
         }
