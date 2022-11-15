@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import Interface.CardListener
 import adaptor.RecyclerViewProjectDsicussionsAdapter
 import adaptor.RecyclerViewReplyDiscussionAdapter
@@ -17,7 +18,7 @@ import model.reply
 
 class ReplyDiscussion : AppCompatActivity(), CardListener {
     private  var position=0
-    private var adapter= RecyclerViewReplyDiscussionAdapter(GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].replies,this)
+    private var adapter= RecyclerViewReplyDiscussionAdapter(GlobalVar.projects[curproject].discussion[position].replies,this)
     private lateinit var binding:ActivityReplyDiscussionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +30,10 @@ class ReplyDiscussion : AppCompatActivity(), CardListener {
     }
 
     private fun GetIntent(){
-         position = intent.getIntExtra("position",0)
-        binding.discussiontitletva.text = GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].title
-        binding.disucussionmakertv.text = GlobalVar.users[GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].creator].name
-        binding.discussionrepdesctv.text = GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].description
+        position = intent.getIntExtra("position",0)
+        binding.discussiontitletva.text = GlobalVar.projects[curproject].discussion[position].title
+        binding.disucussionmakertv.text = GlobalVar.users[GlobalVar.projects[curproject].discussion[position].creator].name
+        binding.discussionrepdesctv.text = GlobalVar.projects[curproject].discussion[position].description
     }
     private fun listener(){
         binding.imageView12.setOnClickListener(){
@@ -44,7 +45,7 @@ class ReplyDiscussion : AppCompatActivity(), CardListener {
           var replymessage = replyinputtext.text.toString()
 
             if (replymessage!= "") {
-                GlobalVar.projects[GlobalVar.projects.size - 1].discussion[position].replies.add(
+                GlobalVar.projects[curproject].discussion[position].replies.add(
                     reply(0, replymessage)
                 )
                 adapter.notifyDataSetChanged()
@@ -62,7 +63,7 @@ class ReplyDiscussion : AppCompatActivity(), CardListener {
 
     }
     fun setupRecycler(){
-        adapter= RecyclerViewReplyDiscussionAdapter(GlobalVar.projects[GlobalVar.projects.size-1].discussion[position].replies,this)
+        adapter= RecyclerViewReplyDiscussionAdapter(GlobalVar.projects[curproject].discussion[position].replies,this)
        val layoutManager = GridLayoutManager(baseContext, 1)
         repliesrv.layoutManager = layoutManager
         repliesrv.adapter = adapter

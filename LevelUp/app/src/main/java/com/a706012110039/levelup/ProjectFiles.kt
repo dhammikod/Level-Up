@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import Interface.CardListener
 import adaptor.RecyclerViewFilesAdapter
 import android.app.Activity
@@ -72,7 +73,7 @@ class ProjectFiles : Fragment(), CardListener {
     fun setupRecycler() {
 
         projectfilesrv.layoutManager = GridLayoutManager(context, 3)
-        projectfilesrv.adapter = GlobalVar.projects[GlobalVar.projects.size - 1].files?.let {
+        projectfilesrv.adapter = GlobalVar.projects[curproject].files?.let {
             RecyclerViewFilesAdapter(it, this)
         }
     }

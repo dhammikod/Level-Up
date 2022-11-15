@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,7 +24,7 @@ class ProjectActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProjectBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+//        curproject = intent.getIntExtra("position", -1)
     setcurfragment(ProjectOverview())
         listener()
 

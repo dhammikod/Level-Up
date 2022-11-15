@@ -10,5 +10,6 @@ class GlobalVar {
         var curuser = 0
         var upcomingTask = ArrayList<String>()
         var tempDATAFILE = ""
+        var curproject = 0
     }
 }

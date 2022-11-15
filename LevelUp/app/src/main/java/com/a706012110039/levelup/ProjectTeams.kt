@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import Interface.CardListener
 import adaptor.RecylcerViewProjectTeamsAdapter
 import android.content.Intent
@@ -24,7 +25,7 @@ class ProjectTeams : Fragment(R.layout.fragment_project_teams), CardListener {
     fun setupRecycler(){
         val userss=ArrayList<user>()
         for(i in 0..GlobalVar.users.size-1){
-            if(GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.contains(GlobalVar.users[i].id)){
+            if(GlobalVar.projects[curproject].enrolleduser.contains(GlobalVar.users[i].id)){
                 userss.add(GlobalVar.users[i])
             }
         }

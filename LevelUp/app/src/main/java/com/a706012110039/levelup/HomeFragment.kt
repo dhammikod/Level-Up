@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Interface.CardListener
 import adaptor.RecyclerViewNewsAdaptor
 import adaptor.recyclerviewRecentsAdaptor
 import adaptor.recyclerviewUpcomingTaskAdaptor
@@ -28,7 +29,7 @@ import com.github.mikephil.charting.utils.MPPointF
 import kotlinx.android.synthetic.main.fragment_home.*
 import model.news
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), CardListener {
     private lateinit var viewbind: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -206,8 +207,14 @@ class HomeFragment : Fragment() {
         }
 
         val recentsAdaptor: recyclerviewRecentsAdaptor
-        recentsAdaptor = recyclerviewRecentsAdaptor(GlobalVar.users[GlobalVar.curuser].mycurprojects)
+        recentsAdaptor = recyclerviewRecentsAdaptor(GlobalVar.users[GlobalVar.curuser].mycurprojects, this )
         viewbind.RVrecentprojects.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.HORIZONTAL, false)
         viewbind.RVrecentprojects.adapter = recentsAdaptor
+    }
+
+    override fun onCardClick(position: Int) {
+        val Intent = Intent(activity, ProjectActivity::class.java)
+        GlobalVar.curproject=position
+        startActivity(Intent)
     }
 }

@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -37,12 +38,12 @@ class ProjectOverview : Fragment() {
     }
 
     private fun start(){
-        binding.projectcreatortv.text = GlobalVar.users[GlobalVar.projects[GlobalVar.projects.size-1].creator].name
-        binding.projecttitletv.text= GlobalVar.projects[GlobalVar.projects.size-1].title
-        binding.projectnotestv.text= GlobalVar.projects[GlobalVar.projects.size-1].notes
-        binding.projectstarttv.text= GlobalVar.projects[GlobalVar.projects.size-1].startdate
-        binding.projectoverviewtv.text= GlobalVar.projects[GlobalVar.projects.size-1].overview
-        val id: Int = this.getResources().getIdentifier(GlobalVar.projects[GlobalVar.projects.size-1].logoproject, "drawable", context?.getPackageName())
+        binding.projectcreatortv.text = GlobalVar.users[GlobalVar.projects[curproject].creator].name
+        binding.projecttitletv.text= GlobalVar.projects[curproject].title
+        binding.projectnotestv.text= GlobalVar.projects[curproject].notes
+        binding.projectstarttv.text= GlobalVar.projects[curproject].startdate
+        binding.projectoverviewtv.text= GlobalVar.projects[curproject].overview
+        val id: Int = this.getResources().getIdentifier(GlobalVar.projects[curproject].logoproject, "drawable", context?.getPackageName())
         binding.projectimage.setImageResource(id)
 //        binding.projectimage.setImageURI(GlobalVar.projects[GlobalVar.projects.size-1].logoproject.toUri())
     }

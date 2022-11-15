@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import Interface.CardListener
 import adaptor.RecyclerViewProjectDsicussionsAdapter
 import adaptor.RecylcerViewProjectTeamsAdapter
@@ -36,7 +37,7 @@ class ProjectDiscussion : Fragment(R.layout.fragment_project_discussion), CardLi
     fun setupRecycler(){
 
         projectdiscussionsrv.layoutManager = GridLayoutManager(context, 1)
-        projectdiscussionsrv.adapter = GlobalVar.projects[GlobalVar.projects.size-1].discussion?.let {
+        projectdiscussionsrv.adapter = GlobalVar.projects[curproject].discussion?.let {
             RecyclerViewProjectDsicussionsAdapter(it, this)
         }
     }
@@ -54,7 +55,7 @@ class ProjectDiscussion : Fragment(R.layout.fragment_project_discussion), CardLi
             var desc = discdesc?.text.toString()
 
             if (title != "" && desc != ""){
-                GlobalVar.projects[GlobalVar.projects.size-1].discussion.add(0, discussion(title,desc,GlobalVar.curuser,
+                GlobalVar.projects[curproject].discussion.add(0, discussion(title,desc,GlobalVar.curuser,
                     arrayListOf()))
             }
 

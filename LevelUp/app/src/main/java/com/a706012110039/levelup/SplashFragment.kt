@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -104,17 +105,7 @@ class SplashFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun dummydata(){
 
-        val neededprofessionArray = ArrayList<String>()
-        val discussionArray = ArrayList<discussion>()
-        val tasksArray = ArrayList<task>()
-        val enrolleduserArray = ArrayList<Int>()
-        val filesArray = ArrayList<files>()
 
-        GlobalVar.projects.add(projects(11,"Creative Design", "creative_des","","","",
-            neededprofessionArray,discussionArray,tasksArray,enrolleduserArray,2, filesArray))
-
-        GlobalVar.projects.add(projects(2,"Music Ally", "job_default","","","",
-            neededprofessionArray,discussionArray,tasksArray,enrolleduserArray,3, filesArray))
 
         val roles1=ArrayList<String>()
         roles1.add("Programmer")
@@ -210,6 +201,28 @@ class SplashFragment : Fragment() {
             projects(0,"Level Up","logolvlup","LevelUp Project Collaboration and Media Mobile Application","Project is started with an android based application","9 Oktober 2022", roles1,discussions ,tasks,
                 arrayListOf(),0,files)
         )
+
+        GlobalVar.projects.add(projects(11,"Creative Design", "creative_des","","","",
+            arrayListOf(), arrayListOf(), arrayListOf(),arrayListOf(),2, arrayListOf()))
+        GlobalVar.projects[1].files.add(files[0])
+        GlobalVar.projects[1].files.add(files[1])
+        GlobalVar.projects[1].files.add(files[2])
+        GlobalVar.projects[1].files.add(files[3])
+
+        GlobalVar.projects[1].discussion.add(discussions[0])
+        GlobalVar.projects[1].discussion.add(discussions[1])
+
+
+        GlobalVar.projects.add(projects(2,"Music Ally", "job_default","","","",
+            arrayListOf(),arrayListOf(),arrayListOf(),arrayListOf(),3, arrayListOf()))
+        GlobalVar.projects[2].files.add(files[0])
+        GlobalVar.projects[2].files.add(files[1])
+        GlobalVar.projects[2].files.add(files[2])
+        GlobalVar.projects[2].files.add(files[3])
+
+        GlobalVar.projects[2].discussion.add(discussions[0])
+        GlobalVar.projects[2].discussion.add(discussions[1])
+
         GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(0)
         GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(1)
         GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(2)
@@ -217,7 +230,7 @@ class SplashFragment : Fragment() {
         GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(4)
 
         Log.d("projects", GlobalVar.projects.toString())
-
+        curproject = GlobalVar.projects.size-1
     }
 
 

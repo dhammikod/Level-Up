@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import Interface.CardListener
 import adaptor.RecylcerViewProjectTasksAdapter
 import android.app.DatePickerDialog
@@ -68,14 +69,14 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
         listdoneproject.clear()
 
 
-        for (i in 0..GlobalVar.projects[GlobalVar.projects.size-1].tasks.size-1){
-        if (GlobalVar.projects[GlobalVar.projects.size-1].tasks[i].status == "N"){
-            listtodo.add(GlobalVar.projects[GlobalVar.projects.size-1].tasks[i])}
+        for (i in 0..GlobalVar.projects[curproject].tasks.size-1){
+        if (GlobalVar.projects[curproject].tasks[i].status == "N"){
+            listtodo.add(GlobalVar.projects[curproject].tasks[i])}
     }
 
-        for (i in 0..GlobalVar.projects[GlobalVar.projects.size-1].tasks.size-1){
-            if (GlobalVar.projects[GlobalVar.projects.size-1].tasks[i].status == "Y"){
-                listdoneproject.add(GlobalVar.projects[GlobalVar.projects.size-1].tasks[i])
+        for (i in 0..GlobalVar.projects[curproject].tasks.size-1){
+            if (GlobalVar.projects[curproject].tasks[i].status == "Y"){
+                listdoneproject.add(GlobalVar.projects[curproject].tasks[i])
             }
         }
 
@@ -136,7 +137,7 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
 
 
             if (title != "" && desc != "" && assign != ""){
-                GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(0, task(title,desc, formattedDate,assign,"N"))
+                GlobalVar.projects[curproject].tasks.add(0, task(title,desc, formattedDate,assign,"N"))
                 dialog.dismiss()
                 setupRecycler()
             }
@@ -188,7 +189,7 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
     private fun spinner(){
 //        val userss=ArrayList<user>()
 //        for(i in 0..GlobalVar.users.size-1){
-//            if(GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.contains(GlobalVar.users[i].id)){
+//            if(GlobalVar.projects[curprojects].enrolleduser.contains(GlobalVar.users[i].id)){
 //                userss.add(GlobalVar.users[i])
 //            }
 //        }
