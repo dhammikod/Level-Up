@@ -5,14 +5,12 @@ import Interface.CardListener
 import adaptor.RecyclerViewFilesAdapter
 import android.app.Activity
 import android.content.Intent
-import android.content.Intent.getIntent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.a706012110039.levelup.databinding.FragmentProjectFilesBinding
@@ -39,34 +37,20 @@ class ProjectFiles : Fragment(), CardListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var intent = activity?.intent?.getIntExtra("helena cantik",0)
         setupRecycler()
-        Log.d(" resolver", contentResolver.toString())
 
         binding.addFileFAB.setOnClickListener {
 
-//            val deferredResult = GlobalScope.async {
-//
-//                val sd = async {buttonOpenFile()
-//                    Log.d("U",u.toString())
-//
-//                }.await()
-//                val one = async {if(u!= null){            geturiData(u)
-//                } }.await()
             buttonOpenFile()
-
-//            Thread.sleep(5000)  // wait for 5 second
-//            geturiData(u)
 
         }
 
+        var thedata = activity?.intent?.getStringExtra("dataaa")
+        if (thedata != null) {
+            Log.d("AMEN",thedata)
+        }
 
-        var amin = intent.getStringExtra("dataaa")
-        var contentResolver = activity?.applicationContext?.contentResolver
-//    }
     }
-
-
 
     fun setupRecycler() {
 
@@ -100,9 +84,6 @@ class ProjectFiles : Fragment(), CardListener {
             resultData?.data?.also { uri ->
                 val filePath: String? = uri.path
 
-                Toast.makeText(activity, filePath,
-                    Toast.LENGTH_LONG).show()
-
                 if (filePath != null) {
                     Log.d("Picfile", filePath)
                 }
@@ -110,9 +91,8 @@ class ProjectFiles : Fragment(), CardListener {
             }
         }
         val Intentt = Intent(context, dontdelete::class.java).apply {
-            putExtra("data", u)
+            putExtra("data", u.toString())
         }
-
         startActivity(Intentt)
     }
 }

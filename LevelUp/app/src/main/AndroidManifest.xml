@@ -82,6 +82,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".dontdelete"
+            android:exported="false" />
+        <activity
             android:name=".IntroActivity"
             android:exported="true">
             <intent-filter>

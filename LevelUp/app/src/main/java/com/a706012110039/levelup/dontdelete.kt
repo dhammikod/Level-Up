@@ -1,11 +1,13 @@
 package com.a706012110039.levelup
 
+import Database.GlobalVar
 import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -15,6 +17,7 @@ class dontdelete : AppCompatActivity() {
         setContentView(R.layout.activity_dontdelete)
         var intent = intent
         var uirr = intent.getStringExtra("data")
+
         geturiData(Uri.parse(uirr))
 
     }
@@ -46,9 +49,7 @@ class dontdelete : AppCompatActivity() {
             temp = cursor.getString(nameIndex)
         }
 
-        val Intentt = Intent(this, ProjectFiles::class.java).apply {
-            putExtra("dataaa", temp)
-        }
-        startActivity(Intentt)
+        GlobalVar.tempDATAFILE = temp
+        finish()
     }
 }
