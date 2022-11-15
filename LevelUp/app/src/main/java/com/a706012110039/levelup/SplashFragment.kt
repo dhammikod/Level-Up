@@ -3,15 +3,19 @@ package com.a706012110039.levelup
 import Database.GlobalVar
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.a706012110039.levelup.databinding.FragmentSplashBinding
 import model.*
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -84,6 +88,8 @@ class SplashFragment : Fragment() {
             }
         }
 
+
+
         dummydata()
         // Inflate the layout for this fragment
         return viewbind.root
@@ -94,6 +100,7 @@ class SplashFragment : Fragment() {
         return sharedPref.getBoolean("Finished",false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun dummydata(){
 
         val neededprofessionArray = ArrayList<String>()
@@ -178,13 +185,16 @@ class SplashFragment : Fragment() {
         val discussions=ArrayList<discussion>()
         discussions.add(discussion("Salary","How much is salary",0,replies1))
         discussions.add(discussion("WorkPlan","We need to come up with our work plan, any ideas?",0,replies2))
-        val date = Date(
-        )
+
+        var date = LocalDate.parse("2022-12-01")
+        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
+        var formattedDate = date.format(formatter)
+
         val tasks=ArrayList<task>()
-        tasks.add(task("Make Project Prototype","An accurate prototype to pitch investors",date,0,"N"))
-        tasks.add(task("Make Project BMC","BMC and Project idea plans",date,0,"Y"))
-        tasks.add(task("Make Project Prototype 2","An accurate prototype to pitch investors",date,0,"N"))
-        tasks.add(task("Make Project BMC 2","BMC and Project idea plans",date,0,"Y"))
+        tasks.add(task("Make Project Prototype","An accurate prototype to pitch investors",formattedDate,0,"N"))
+        tasks.add(task("Make Project BMC","BMC and Project idea plans",formattedDate,0,"Y"))
+        tasks.add(task("Make Project Prototype 2","An accurate prototype to pitch investors",formattedDate,0,"N"))
+        tasks.add(task("Make Project BMC 2","BMC and Project idea plans",formattedDate,0,"Y"))
 
 
 
