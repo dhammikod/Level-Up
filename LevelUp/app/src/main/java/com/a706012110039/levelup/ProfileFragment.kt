@@ -56,5 +56,7 @@ class ProfileFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         viewbind.status.text = GlobalVar.users[GlobalVar.curuser].statuspremium
+        viewbind.name.text = GlobalVar.users[GlobalVar.curuser].name
+        viewbind.email.text = GlobalVar.users[GlobalVar.curuser].Email
     }
 }
