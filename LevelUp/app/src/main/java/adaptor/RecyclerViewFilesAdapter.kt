@@ -22,10 +22,11 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, cardListener: CardListener) : RecyclerView.ViewHolder(view) {
 
         val name: TextView
         val image: ImageView
+
 
 
         init {
@@ -42,7 +43,7 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.cardview_files, viewGroup, false)
 
-        return ViewHolder(view)
+        return ViewHolder(view,cardListener)
     }
 
     // Replace the contents of a view (invoked by the layout manager)

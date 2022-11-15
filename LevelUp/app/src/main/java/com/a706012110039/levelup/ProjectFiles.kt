@@ -7,6 +7,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.DocumentsContract
 import android.provider.Settings.Global
 import android.util.Log
 import android.view.LayoutInflater
@@ -61,7 +62,9 @@ class ProjectFiles : Fragment(), CardListener {
     }
 
     override fun onCardClick(position: Int) {
-        TODO("Not yet implemented")
+        binding.
+        Log.d("hi","here")
+        openFile(Uri.parse(GlobalVar.projects[GlobalVar.projects.size - 1].files.get(position).uri))
     }
 
     fun buttonOpenFile() {
@@ -69,6 +72,20 @@ class ProjectFiles : Fragment(), CardListener {
         chooseFile.type = "*/*"
         chooseFile = Intent.createChooser(chooseFile, "Choose a file")
         startActivityForResult(chooseFile, 1)
+    }
+
+    // Request code for selecting a PDF document.
+    val PICK_PDF_FILE = 2
+
+    fun openFile(pickerInitialUri: Uri) {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            // Optionally, specify a URI for the file that should appear in the
+            // system file picker when it loads.
+            putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri)
+        }
+
+        startActivityForResult(intent, PICK_PDF_FILE)
     }
 
 
