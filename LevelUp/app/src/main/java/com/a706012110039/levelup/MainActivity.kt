@@ -4,6 +4,7 @@ import Database.GlobalVar
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.a706012110039.levelup.databinding.ActivityMainBinding
 import model.user
 
@@ -27,10 +28,6 @@ class MainActivity : AppCompatActivity() {
             arrayListOf(), arrayListOf()))
         GlobalVar.users.add(user(5,"5","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
             arrayListOf(), arrayListOf()))
-
-
-
-
 
 
         binding.Signup.setOnClickListener {

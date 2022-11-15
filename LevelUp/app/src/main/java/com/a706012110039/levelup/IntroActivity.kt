@@ -9,4 +9,5 @@ class IntroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_intro)
         supportActionBar?.hide()
     }
+
 }
