@@ -96,6 +96,7 @@
                         app:startIconTint="@color/lightbluebg">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailRegister_textInputLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="#000000"
@@ -153,6 +154,7 @@
                         app:startIconTint="@color/lightbluebg">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/usernameRegister_textInputLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="#000000"
@@ -212,6 +214,7 @@
                         app:startIconTint="@color/lightbluebg">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordRegister_textInputLayout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textWebPassword"

@@ -30,6 +30,9 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProjectDetailsNotEnrolled"
             android:exported="false" >
             <meta-data

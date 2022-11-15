@@ -12,7 +12,6 @@ import com.a706012110039.levelup.R
 import com.a706012110039.levelup.databinding.CardviewRecentprojectsBinding
 import model.projects
 
-
 class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<Int>) :
         RecyclerView.Adapter<recyclerviewRecentsAdaptor.ViewHolder>() {
 

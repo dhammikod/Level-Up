@@ -3,6 +3,7 @@ package model
 data class user(
     var id:Int,
     var name: String,
+    var password: String,
     var Email: String,
     var statuspremium: String,
     var projectdone: Int,
