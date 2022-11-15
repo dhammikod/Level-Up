@@ -90,6 +90,7 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
         super.onResume()
         setupRecycler()
     }
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun showinput(){
         val dialog = BottomSheetDialog(requireContext())
