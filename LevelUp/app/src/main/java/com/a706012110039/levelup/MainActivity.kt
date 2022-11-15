@@ -18,16 +18,16 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
 
-        GlobalVar.users.add(user(1,"1","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-            arrayListOf(), arrayListOf()))
-        GlobalVar.users.add(user(2,"2","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-            arrayListOf(), arrayListOf()))
-        GlobalVar.users.add(user(3,"3","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-            arrayListOf(), arrayListOf()))
-        GlobalVar.users.add(user(4,"4","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-            arrayListOf(), arrayListOf()))
-        GlobalVar.users.add(user(5,"5","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
-            arrayListOf(), arrayListOf()))
+//        GlobalVar.users.add(user(1,"1","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//            arrayListOf(), arrayListOf()))
+//        GlobalVar.users.add(user(2,"2","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//            arrayListOf(), arrayListOf()))
+//        GlobalVar.users.add(user(3,"3","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//            arrayListOf(), arrayListOf()))
+//        GlobalVar.users.add(user(4,"4","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//            arrayListOf(), arrayListOf()))
+//        GlobalVar.users.add(user(5,"5","password","quantunm@gmail.com","Free user",0,0,0, arrayListOf("UI/UX designer", "database manager", "front end"),
+//            arrayListOf(), arrayListOf()))
 
 
         binding.Signup.setOnClickListener {

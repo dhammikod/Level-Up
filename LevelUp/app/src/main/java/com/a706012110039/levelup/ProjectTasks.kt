@@ -10,6 +10,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
 import android.app.Dialog
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -20,14 +22,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.a706012110039.levelup.databinding.ActivityProjectBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_forgot_password.*
 import kotlinx.android.synthetic.main.fragment_project_discussion.*
 import kotlinx.android.synthetic.main.fragment_project_tasks.*
 import kotlinx.android.synthetic.main.input_task_modal.*
 import model.task
+import model.user
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, DatePickerDialog.OnDateSetListener {
@@ -42,6 +47,8 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
     var smonth = 0
     var syear = 0
 
+    var taskfor = -1
+
     private val cal = Calendar.getInstance()
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -49,7 +56,6 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
         super.onViewCreated(view, savedInstanceState)
         setupRecycler()
         onResume()
-
         addtask.setOnClickListener(){
             showinput()
         }
@@ -106,6 +112,7 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
         val taskdesc = dialog.findViewById<TextInputEditText>(R.id.taskdescinputtext)
         val back = dialog.findViewById<ImageView>(R.id.imageView25)
         val dateinput = dialog.findViewById<TextInputEditText>(R.id.dateinputtext)
+        val taskfor = dialog.findViewById<TextInputEditText>(R.id.taskforinputtext)
 
         addbutton?.setOnClickListener(){
             var title = tasktitle?.text.toString()
@@ -114,6 +121,7 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
             var date = LocalDate.parse("2022-09-16")
             var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
             var formattedDate = date.format(formatter)
+            var assign = taskfor?.text.toString()
 
             try {
                  date = LocalDate.parse(dateinput?.text)
@@ -127,8 +135,10 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
             }
 
 
-            if (title != "" && desc != ""){
-                GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(0, task(title,desc, formattedDate,0,"N"))
+            if (title != "" && desc != "" && assign != ""){
+                GlobalVar.projects[GlobalVar.projects.size-1].tasks.add(0, task(title,desc, formattedDate,assign,"N"))
+                dialog.dismiss()
+                setupRecycler()
             }
 
 
@@ -139,8 +149,7 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
 
 
 
-            dialog.dismiss()
-            setupRecycler()
+
         }
 
         back?.setOnClickListener(){
@@ -176,9 +185,26 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener, Da
 
     }
 
-    private fun pickdate(){
-
-
+    private fun spinner(){
+//        val userss=ArrayList<user>()
+//        for(i in 0..GlobalVar.users.size-1){
+//            if(GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.contains(GlobalVar.users[i].id)){
+//                userss.add(GlobalVar.users[i])
+//            }
+//        }
+//
+//        var spinner = taskforspinner
+//        val arrayAdapter = ArrayAdapter<user>(requireActivity(), android.R.layout.simple_spinner_item, userss)
+//        spinner.adapter = arrayAdapter
+//        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+//            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+//               taskfor = userss[p2].id
+//            }
+//
+//            override fun onNothingSelected(p0: AdapterView<*>?) {
+//               taskfor = -1
+//            }
+//        }
     }
 
 }

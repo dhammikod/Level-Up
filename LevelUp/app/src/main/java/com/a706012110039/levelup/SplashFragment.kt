@@ -194,10 +194,10 @@ class SplashFragment : Fragment() {
 
 
         val tasks=ArrayList<task>()
-        tasks.add(task("Make Project Prototype","An accurate prototype to pitch investors",formattedDate,0,"N"))
-        tasks.add(task("Make Project BMC","BMC and Project idea plans",formattedDate,0,"Y"))
-        tasks.add(task("Make Project Prototype 2","An accurate prototype to pitch investors",formattedDate,0,"N"))
-        tasks.add(task("Make Project BMC 2","BMC and Project idea plans",formattedDate,0,"Y"))
+        tasks.add(task("Make Project Prototype","An accurate prototype to pitch investors",formattedDate,"Everyone","N"))
+        tasks.add(task("Make Project BMC","BMC and Project idea plans",formattedDate,"Everyone","Y"))
+        tasks.add(task("Make Project Prototype 2","An accurate prototype to pitch investors",formattedDate,"Everyone","N"))
+        tasks.add(task("Make Project BMC 2","BMC and Project idea plans",formattedDate,"Everyone","Y"))
 
 
 
