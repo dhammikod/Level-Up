@@ -48,6 +48,7 @@ class ReplyDiscussion : AppCompatActivity(), CardListener {
                     reply(0, replymessage)
                 )
                 adapter.notifyDataSetChanged()
+                replyinputtext.text = null
                 super.onResume()
             }
             else{}

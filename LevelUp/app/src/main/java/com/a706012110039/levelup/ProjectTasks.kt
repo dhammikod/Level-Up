@@ -2,28 +2,23 @@ package com.a706012110039.levelup
 
 import Database.GlobalVar
 import Interface.CardListener
-import adaptor.RecyclerViewProjectDsicussionsAdapter
 import adaptor.RecylcerViewProjectTasksAdapter
+import android.os.Build
 import android.os.Bundle
-import android.text.TextUtils.replace
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import com.a706012110039.levelup.databinding.ActivityProjectBinding
-import com.a706012110039.levelup.databinding.FragmentProfileBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.fragment_project_discussion.*
 import kotlinx.android.synthetic.main.fragment_project_tasks.*
 import kotlinx.android.synthetic.main.input_task_modal.*
-import model.discussion
 import model.task
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener {
 
@@ -106,8 +101,17 @@ class ProjectTasks : Fragment(R.layout.fragment_project_tasks), CardListener {
     override fun onCardClick(position: Int) {
         onResume()
         setupRecycler()
-    }
+//        val ft: FragmentTransaction = this.beginTransaction()
+//        if (Build.VERSION.SDK_INT >= 26) {
+//            ft.setReorderingAllowed(false)
+//        }
+//        ft.detach(this).attach(this).commit()
 
+        this.requireFragmentManager().beginTransaction().apply {
+            replace(R.id.frameproject, ProjectTasks())
+            commit()
+        }
+    }
 
 }
 
