@@ -88,6 +88,8 @@ class SplashFragment : Fragment() {
             }
         }
 
+
+
         dummydata()
         // Inflate the layout for this fragment
         return viewbind.root

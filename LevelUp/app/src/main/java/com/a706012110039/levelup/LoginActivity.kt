@@ -4,14 +4,20 @@ import Database.GlobalVar
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.core.app.ActivityCompat
 import com.a706012110039.levelup.databinding.ActivityLoginBinding
+
 
 class LoginActivity : AppCompatActivity() {
     lateinit var shared: SharedPreferences
     var remember = false
     private lateinit var binding: ActivityLoginBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -37,6 +43,10 @@ class LoginActivity : AppCompatActivity() {
             }
             GlobalVar.curuser = 0
         }
+
+        ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            android.Manifest.permission.READ_EXTERNAL_STORAGE),
+            PackageManager.PERMISSION_GRANTED)
     }
 
     fun checkRemember() {
