@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.a706012110039.levelup.databinding.FragmentProjectFilesBinding
 import kotlinx.android.synthetic.main.fragment_project_files.*
+import model.files
 
 
 class ProjectFiles : Fragment(), CardListener {
@@ -48,8 +49,14 @@ class ProjectFiles : Fragment(), CardListener {
         var thedata = activity?.intent?.getStringExtra("dataaa")
         if (thedata != null) {
             Log.d("AMEN",thedata)
+            GlobalVar.projects[GlobalVar.projects.size -1].files.add(files(thedata,"",""))
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupRecycler()
     }
 
     fun setupRecycler() {
