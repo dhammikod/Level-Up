@@ -9,7 +9,7 @@
     tools:context=".HomeFragment" >
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/jobsForYou_titleFragment"
         android:layout_width="169dp"
         android:layout_height="49dp"
         android:layout_marginStart="32dp"
@@ -27,9 +27,9 @@
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_baseline_notifications_none_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintBottom_toBottomOf="@+id/jobsForYou_titleFragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
+        app:layout_constraintTop_toTopOf="@+id/jobsForYou_titleFragment" />
 
     <ScrollView
         android:layout_width="match_parent"
