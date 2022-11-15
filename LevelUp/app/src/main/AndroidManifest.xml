@@ -4,7 +4,6 @@
     package="com.a706012110039.levelup">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,17 +16,8 @@
         android:theme="@style/Theme.LevelUp"
         tools:targetApi="31">
         <activity
-<<<<<<< Updated upstream
             android:name=".Choose_profession_Activity"
             android:exported="false" />
-=======
-            android:name=".dontdelete"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
->>>>>>> Stashed changes
         <activity
             android:name=".InputDiscussionActivity"
             android:exported="false">
