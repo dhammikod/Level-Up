@@ -65,7 +65,6 @@ class RecyclerViewFilesAdapter (private val dataSet: ArrayList<files>, val cardL
         if (dataSet[position].name.contains("pdf"))
             viewHolder.image.setImageResource(R.drawable.pdf)
 
-
         if (dataSet[position].name.contains("xls"))
             viewHolder.image.setImageResource(R.drawable.spreadsheet)
 

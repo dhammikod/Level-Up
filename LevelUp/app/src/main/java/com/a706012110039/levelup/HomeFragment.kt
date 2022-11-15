@@ -3,6 +3,7 @@ package com.a706012110039.levelup
 import Database.GlobalVar
 import adaptor.RecyclerViewNewsAdaptor
 import adaptor.recyclerviewRecentsAdaptor
+import adaptor.recyclerviewUpcomingTaskAdaptor
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         viewbind = FragmentHomeBinding.inflate(layoutInflater)
         adddummydatarecents()
+        upcomingtask()
         tesads()
         tesnews()
 
@@ -55,6 +57,32 @@ class HomeFragment : Fragment() {
         imageList.add(SlideModel(R.drawable.news3, ScaleTypes.FIT))
 
         viewbind.carouselnews.setImageList(imageList)
+    }
+
+    fun upcomingtask() {
+        var temp: ArrayList<String>
+        temp = ArrayList()
+        var tempINT = 0
+        for (i in GlobalVar.projects) {
+            var temppppp = 0
+            for (x in GlobalVar.projects[tempINT].tasks) {
+                if (GlobalVar.projects[tempINT].tasks[temppppp].status == "N") {
+                    temp.add(GlobalVar.projects[tempINT].tasks[temppppp].title)
+                }
+                temppppp++
+
+            }
+            tempINT++
+        }
+
+            val upcomingAdaptor: recyclerviewUpcomingTaskAdaptor
+            upcomingAdaptor = recyclerviewUpcomingTaskAdaptor(temp)
+            viewbind.RVrecentprojects.layoutManager =
+                LinearLayoutManager(requireActivity().baseContext,
+                    LinearLayoutManager.HORIZONTAL,
+                    false)
+            viewbind.RVrecentprojects.adapter = upcomingAdaptor
+
     }
 
     fun adddummydatarecents(){
