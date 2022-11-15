@@ -1,6 +1,7 @@
 package adaptor
 
 import Database.GlobalVar
+import Interface.CardListener
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,7 +16,7 @@ import kotlin.collections.ArrayList
 import android.widget.Filter
 
 
-class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>) :
+class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>, val cardListener: CardListener) :
     RecyclerView.Adapter<RecyclerViewJobsForYouAdapter.ViewHolder>() {
     val initialProjectsDataList = ArrayList<projects>().apply {
         dataSet?.let { addAll(it) }
@@ -25,7 +26,7 @@ class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>) :
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View, val cardListener: CardListener) : RecyclerView.ViewHolder(view) {
         val binding = CardviewJobsforyouBinding.bind(itemView)
 
         fun setdata(data: projects){
@@ -37,6 +38,10 @@ class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>) :
             Log.d("HERE", GlobalVar.users.toString())
             binding.creatorJOBSFORU.text = GlobalVar.users.get(data.creator).name
 
+            itemView.setOnClickListener {
+                cardListener.onCardClick(adapterPosition)
+            }
+
         }
     }
 
@@ -46,7 +51,7 @@ class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>) :
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.cardview_jobsforyou, viewGroup, false)
 
-        return ViewHolder(view)
+        return ViewHolder(view, cardListener)
     }
 
     // Replace the contents of a view (invoked by the layout manager)

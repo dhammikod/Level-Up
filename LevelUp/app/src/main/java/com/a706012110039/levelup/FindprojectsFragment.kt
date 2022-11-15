@@ -26,6 +26,7 @@ class FindprojectsFragment : Fragment(), CardListener {
     private lateinit var viewbind: FragmentFindprojectsBinding
     private lateinit var jobsAdaptor: RecyclerViewJobsForYouAdapter
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +35,7 @@ class FindprojectsFragment : Fragment(), CardListener {
 
         viewbind = FragmentFindprojectsBinding.inflate(layoutInflater)
         setuprv()
+        listener()
         // Inflate the layout for this fragment
 
 
@@ -56,15 +58,15 @@ class FindprojectsFragment : Fragment(), CardListener {
 
     fun setuprv(){
 //        val jobsAdaptor: RecyclerViewJobsForYouAdapter
-        jobsAdaptor = RecyclerViewJobsForYouAdapter(GlobalVar.projects)
+        jobsAdaptor = RecyclerViewJobsForYouAdapter(GlobalVar.projects, this)
         viewbind.rvJobsforu.layoutManager = LinearLayoutManager(requireActivity().baseContext, LinearLayoutManager.VERTICAL, false)
         viewbind.rvJobsforu.adapter = jobsAdaptor
     }
 
     private fun listener() {
         viewbind.addDataFAB.setOnClickListener {
-//            val myIntent = Intent(this, FormActivity::class.java)
-//            startActivity(myIntent)
+            val myIntent = Intent(activity, EnrollProject_Activity::class.java)
+            startActivity(myIntent)
         }
     }
 
