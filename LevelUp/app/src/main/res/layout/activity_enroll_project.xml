@@ -7,19 +7,19 @@
     tools:context=".EnrollProject_Activity">
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/enroll_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Creative Design"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintEnd_toEndOf="@+id/enroll_logoproject"
+        app:layout_constraintStart_toStartOf="@+id/enroll_logoproject"
+        app:layout_constraintTop_toBottomOf="@+id/enroll_logoproject" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/enroll_logoproject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -29,16 +29,16 @@
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/enroll_creator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="By brain Action"
-        app:layout_constraintEnd_toEndOf="@+id/textView26"
-        app:layout_constraintStart_toStartOf="@+id/textView26"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        app:layout_constraintEnd_toEndOf="@+id/enroll_title"
+        app:layout_constraintStart_toStartOf="@+id/enroll_title"
+        app:layout_constraintTop_toBottomOf="@+id/enroll_title" />
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/enroll_titleOverview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -47,34 +47,48 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        app:layout_constraintTop_toBottomOf="@+id/enroll_creator" />
 
     <TextView
-        android:id="@+id/textView37"
+        android:id="@+id/enroll_overview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="I am a 22 years old trying to build a website that allows people to create their own templates and be able to sell them off"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView36"
-        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+        app:layout_constraintStart_toStartOf="@+id/enroll_titleOverview"
+        app:layout_constraintTop_toBottomOf="@+id/enroll_titleOverview" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/enroll_titleNeededprofession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Professionals Needed"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView37"
-        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+        app:layout_constraintStart_toStartOf="@+id/enroll_overview"
+        app:layout_constraintTop_toBottomOf="@+id/enroll_overview" />
 
     <TextView
-        android:id="@+id/textView39"
+        android:id="@+id/enroll_neededprofession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Front end Developer"
-        app:layout_constraintStart_toStartOf="@+id/textView38"
-        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+        app:layout_constraintStart_toStartOf="@+id/enroll_titleNeededprofession"
+        app:layout_constraintTop_toBottomOf="@+id/enroll_titleNeededprofession" />
+
+    <Button
+        android:id="@+id/enroll_enrollButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="Enroll Project"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
