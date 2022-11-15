@@ -1,10 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
-import adaptor.RecyclerViewJobsForYouAdapter
-import android.content.Intent
-import android.net.Uri
-import android.os.Build
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.a706012110039.levelup.databinding.ActivityEnrollProjectBinding
@@ -33,22 +30,15 @@ class EnrollProject_Activity : AppCompatActivity() {
     private fun getintent() {
         position = intent.getIntExtra("position", -1)
         val project = GlobalVar.projects[position]
-        Uri.parse(GlobalVar.projects[position].logoproject)
-//        if (project.logoproject.isNotEmpty()) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//                baseContext.contentResolver.takePersistableUriPermission(
-//                    Uri.parse(GlobalVar.projects[position].logoproject),
-//                    Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-//                )
-//            }
-//        }
         open(project)
     }
 
     private fun open(project: projects) {
         viewbind.enrollTitle.text = project.title
-        viewbind.enrollCreator.text = GlobalVar.users[position].name
-        viewbind.enrollLogoproject.setImageURI(Uri.parse(GlobalVar.projects[position].logoproject))
+        viewbind.enrollCreator.text = GlobalVar.users[project.creator].name
+        val context: Context = viewbind.enrollLogoproject.context
+        val id: Int = context.resources.getIdentifier(project.logoproject, "drawable", context.packageName)
+        viewbind.enrollLogoproject.setImageResource(id)
         viewbind.enrollOverview.text = project.overview
         viewbind.enrollNeededprofession.text = project.neededprofession.toString()
     }

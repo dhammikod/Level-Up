@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
     tools:context=".EnrollProject_Activity">
 
     <TextView
@@ -33,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="By brain Action"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/enroll_title"
         app:layout_constraintStart_toStartOf="@+id/enroll_title"
         app:layout_constraintTop_toBottomOf="@+id/enroll_title" />
@@ -44,6 +46,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="Overview"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +59,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="I am a 22 years old trying to build a website that allows people to create their own templates and be able to sell them off"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/enroll_titleOverview"
         app:layout_constraintTop_toBottomOf="@+id/enroll_titleOverview" />
@@ -66,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Professionals Needed"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/enroll_overview"
@@ -77,6 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Front end Developer"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/enroll_titleNeededprofession"
         app:layout_constraintTop_toBottomOf="@+id/enroll_titleNeededprofession" />
 

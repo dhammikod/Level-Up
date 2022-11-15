@@ -30,13 +30,12 @@ class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>, va
         val binding = CardviewJobsforyouBinding.bind(itemView)
 
         fun setdata(data: projects){
-            val context: Context = binding.imageView18.getContext()
-            val id: Int = context.getResources()
-                .getIdentifier(data.logoproject, "drawable", context.getPackageName())
+            val context: Context = binding.imageView18.context
+            val id: Int = context.resources.getIdentifier(data.logoproject, "drawable", context.packageName)
             binding.imageView18.setImageResource(id)
             binding.titleJOBSFORU.text = data.title
             Log.d("HERE", GlobalVar.users.toString())
-            binding.creatorJOBSFORU.text = GlobalVar.users.get(data.creator).name
+            binding.creatorJOBSFORU.text = GlobalVar.users[data.creator].name
 
             itemView.setOnClickListener {
                 cardListener.onCardClick(adapterPosition)
@@ -50,7 +49,6 @@ class RecyclerViewJobsForYouAdapter(private val dataSet: ArrayList<projects>, va
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.cardview_jobsforyou, viewGroup, false)
-
         return ViewHolder(view, cardListener)
     }
 
