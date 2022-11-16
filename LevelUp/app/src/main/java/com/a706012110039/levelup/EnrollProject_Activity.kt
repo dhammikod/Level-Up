@@ -38,7 +38,7 @@ class EnrollProject_Activity : AppCompatActivity() {
 
     private fun open(project: projects) {
         viewbind.enrollTitle.text = project.title
-        viewbind.enrollCreator.text = GlobalVar.users[project.creator].name
+        viewbind.enrollCreator.text = "by " + GlobalVar.users[project.creator].name
         val context: Context = viewbind.enrollLogoproject.context
         val id: Int = context.resources.getIdentifier(project.logoproject, "drawable", context.packageName)
         viewbind.enrollLogoproject.setImageResource(id)
