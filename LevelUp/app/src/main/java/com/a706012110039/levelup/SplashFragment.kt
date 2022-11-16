@@ -223,11 +223,24 @@ class SplashFragment : Fragment() {
         GlobalVar.projects[2].discussion.add(discussions[0])
         GlobalVar.projects[2].discussion.add(discussions[1])
 
+
+
+        GlobalVar.projects[0].enrolleduser.add(0)
+        GlobalVar.projects[0].enrolleduser.add(1)
+        GlobalVar.projects[0].enrolleduser.add(2)
+        GlobalVar.projects[0].enrolleduser.add(3)
+        GlobalVar.projects[0].enrolleduser.add(4)
+
+        GlobalVar.projects[1].enrolleduser.add(3)
+        GlobalVar.projects[1].enrolleduser.add(4)
+
+
         GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(0)
         GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(1)
         GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(2)
-        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(3)
-        GlobalVar.projects[GlobalVar.projects.size-1].enrolleduser.add(4)
+
+
+
 
         Log.d("projects", GlobalVar.projects.toString())
         curproject = GlobalVar.projects.size-1
