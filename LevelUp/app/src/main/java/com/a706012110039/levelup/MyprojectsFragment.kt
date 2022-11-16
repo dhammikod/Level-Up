@@ -1,6 +1,7 @@
 package com.a706012110039.levelup
 
 import Database.GlobalVar
+import Database.GlobalVar.Companion.curproject
 import Interface.CardListener
 import adaptor.RecyclerViewJobsForYouAdapter
 import adaptor.RecyclerView_Projects_OnGoing
@@ -86,6 +87,7 @@ class MyprojectsFragment : Fragment(), CardListener {
 
     override fun onCardClick(position: Int) {
         val myIntent = Intent(context, ProjectActivity::class.java).apply { putExtra("position", position) }
+        curproject = position
         startActivity(myIntent)
     }
 }

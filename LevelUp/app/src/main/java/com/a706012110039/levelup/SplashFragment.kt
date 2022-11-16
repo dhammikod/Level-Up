@@ -109,8 +109,8 @@ class SplashFragment : Fragment() {
 
         val roles1=ArrayList<String>()
         roles1.add("Programmer")
-        roles1.add("Programmer")
-        roles1.add("Programmer")
+        roles1.add("UI/UX Designer")
+        roles1.add("Marketing")
 
 
         val roles2=ArrayList<String>()
