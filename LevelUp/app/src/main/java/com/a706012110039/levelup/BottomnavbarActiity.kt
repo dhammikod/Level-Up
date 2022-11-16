@@ -173,7 +173,7 @@ class BottomnavbarActiity : AppCompatActivity() {
 
     fun tourguide21(){
         TapTargetView.showFor(this,  // `this` is an Activity
-            TapTarget.forView(findViewById(R.id.searchView_myProjects), "", "Use this for faster navigation") // All options below are optional
+            TapTarget.forView(findViewById(R.id.searchtour_myProjects), "", "Use this for faster navigation") // All options below are optional
                 .tintTarget(false)
                 .outerCircleColor(android.R.color.holo_purple)
                 .drawShadow(true)
@@ -275,7 +275,7 @@ class BottomnavbarActiity : AppCompatActivity() {
 
     fun tourguide31(){
         TapTargetView.showFor(this,  // `this` is an Activity
-            TapTarget.forView(findViewById(R.id.searchView_jobsForYou), "", "You can use this to search for projects you desire") // All options below are optional
+            TapTarget.forView(findViewById(R.id.searchtour_jobsForYou), "", "You can use this to search for projects you desire") // All options below are optional
                 .tintTarget(false)
                 .outerCircleColor(android.R.color.holo_purple)
                 .drawShadow(true)

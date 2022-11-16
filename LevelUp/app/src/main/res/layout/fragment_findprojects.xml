@@ -10,14 +10,14 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/searchtour"
+        android:id="@+id/searchtour_jobsForYou"
         android:layout_width="1dp"
         android:layout_height="1dp"
         android:layout_marginEnd="24dp"
         app:cardBackgroundColor="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/searchView_myProjects"
-        app:layout_constraintEnd_toEndOf="@+id/searchView_myProjects"
-        app:layout_constraintTop_toTopOf="@+id/searchView_myProjects" />
+        app:layout_constraintBottom_toBottomOf="@id/searchView_jobsForYou"
+        app:layout_constraintEnd_toEndOf="@id/searchView_jobsForYou"
+        app:layout_constraintTop_toTopOf="@id/searchView_jobsForYou" />
 
     <SearchView
         android:id="@+id/searchView_jobsForYou"
