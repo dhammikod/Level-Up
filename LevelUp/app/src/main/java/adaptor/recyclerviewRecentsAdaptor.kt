@@ -32,7 +32,6 @@ class recyclerviewRecentsAdaptor(private val dataSet: ArrayList<Int>, val cardLi
             if(indexproyek == -1){
                 binding.logoprojectimage.setImageResource(R.drawable.ic_baseline_add_black)
             }else if(!data.logoproject.isNullOrBlank()){
-
                 binding.logoprojectimage.setImageURI(Uri.parse(data.logoproject))
                 val context: Context = binding.logoprojectimage.getContext()
                 val id: Int = context.getResources()
