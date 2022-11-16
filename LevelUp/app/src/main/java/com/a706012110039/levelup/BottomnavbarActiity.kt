@@ -275,7 +275,7 @@ class BottomnavbarActiity : AppCompatActivity() {
 
     fun tourguide31(){
         TapTargetView.showFor(this,  // `this` is an Activity
-            TapTarget.forView(findViewById(R.id.searchtour), "", "You can use this to search for projects you desire") // All options below are optional
+            TapTarget.forView(findViewById(R.id.searchView_jobsForYou), "", "You can use this to search for projects you desire") // All options below are optional
                 .tintTarget(false)
                 .outerCircleColor(android.R.color.holo_purple)
                 .drawShadow(true)
@@ -404,6 +404,32 @@ class BottomnavbarActiity : AppCompatActivity() {
                 }
             })
     }
+    fun tourguide44(){
+        TapTargetView.showFor(this,  // `this` is an Activity
+            TapTarget.forView(findViewById(R.id.status), "", "This part contains all of your basic information such as name email and your current user status") // All options below are optional
+                .tintTarget(false)
+                .outerCircleColor(android.R.color.holo_purple)
+                .drawShadow(true)
+                .transparentTarget(true)
+                .targetRadius(60),  // Specify the target radius (in dp)
+
+            object : TapTargetView.Listener() {
+                override fun onTargetClick(view: TapTargetView) {
+                    super.onTargetClick(view)
+                    view.dismiss(true)
+                }
+
+                override fun onOuterCircleClick(view: TapTargetView?) {
+                    super.onOuterCircleClick(view)
+                    view?.dismiss(true)
+                }
+                override fun onTargetDismissed(view: TapTargetView?, userInitiated: Boolean) {
+                    super.onTargetDismissed(view, userInitiated)
+                    tourguide45()
+                }
+            })
+    }
+
     fun tourguide42(){
         TapTargetView.showFor(this,  // `this` is an Activity
             TapTarget.forView(findViewById(R.id.imageView13), "", "This part contains all of your basic information such as name email and your current user status") // All options below are optional
@@ -452,32 +478,6 @@ class BottomnavbarActiity : AppCompatActivity() {
                 override fun onTargetDismissed(view: TapTargetView?, userInitiated: Boolean) {
                     super.onTargetDismissed(view, userInitiated)
                     tourguide44()
-                }
-            })
-    }
-
-    fun tourguide44(){
-        TapTargetView.showFor(this,  // `this` is an Activity
-            TapTarget.forView(findViewById(R.id.cvProject_past_creator), "", "This part contains all of your basic information such as name email and your current user status") // All options below are optional
-                .tintTarget(false)
-                .outerCircleColor(android.R.color.holo_purple)
-                .drawShadow(true)
-                .transparentTarget(true)
-                .targetRadius(60),  // Specify the target radius (in dp)
-
-            object : TapTargetView.Listener() {
-                override fun onTargetClick(view: TapTargetView) {
-                    super.onTargetClick(view)
-                    view.dismiss(true)
-                }
-
-                override fun onOuterCircleClick(view: TapTargetView?) {
-                    super.onOuterCircleClick(view)
-                    view?.dismiss(true)
-                }
-                override fun onTargetDismissed(view: TapTargetView?, userInitiated: Boolean) {
-                    super.onTargetDismissed(view, userInitiated)
-                    tourguide45()
                 }
             })
     }
