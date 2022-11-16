@@ -39,7 +39,7 @@ class RecyclerView_Projects_OnGoing(private val dataSet: ArrayList<projects>, va
             Log.d("HERE", GlobalVar.users.toString())
             binding.cvProjectOnGoingCreator.text = "by " + GlobalVar.users[data.creator].name
 
-            binding.cvProjectOnGoingProgress.text = "{NULL}"
+            binding.cvProjectOnGoingProgress.text = "60%"
 
             binding.cvProjectOnGoingOverview.text = data.overview
             binding.cvProjectOnGoingCollaborators.text = data.enrolleduser.toString()
